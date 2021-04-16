@@ -1,40 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_stack.h                                  :+:      :+:    :+:   */
+/*   lst_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 14:59:36 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 16:05:28 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/04/16 12:19:38 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/04/16 16:19:09 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_STACK_H
-# define PUSH_SWAP_STACK_H
+#include "push_swap.h"
 
-# include "push_swap.h"
-
-typedef struct s_stack		t_stack;
-
-struct		s_stack
+t_lst	*get_first_lst(t_lst *l)
 {
-	t_lst	*data;
+	t_lst	*first;
+
+	if (!l)
+		return (NULL);
+	first = l;
+	while (first->prev)
+		first = first->prev;
+	return (first);
+}
+
+t_lst	*get_last_lst(t_lst *l)
+{
 	t_lst	*last;
-	int		size;
-};
 
-/*
-** malloc and free
-*/
-
-t_stack		*malloc_stack(t_lst *first, t_lst *last, int size);
-void		free_stack(t_stack *st);
-
-/*
-** generate all needed for a stack a (lst and checker norme lst)
-*/
-
-t_stack		*generate_stack_a_content(char **srcs, int size);
-
-#endif
+	if (!l)
+		return (NULL);
+	last = l;
+	while (last->next)
+		last = last->next;
+	return (last);
+}

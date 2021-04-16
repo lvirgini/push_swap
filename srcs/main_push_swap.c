@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_s_stack.c                                     :+:      :+:    :+:   */
+/*   main_push_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 11:34:37 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 15:56:24 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/03/29 16:31:36 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/04/16 15:57:02 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-** malloc and free for stack
-*/
-
-t_stack		*malloc_stack(t_lst *first, t_lst *last, int size)
+int				main(int argc, char *argv[])
 {
-	t_stack *res;
+	t_stack		*a;
+	t_stack		*b;
 
-	res = (t_stack *)malloc(sizeof(t_stack));
-	if (res == NULL)
-	{
-		error_push_swap(ERR_MALLOC);
-		return (NULL);
-	}
-	res->data = first;
-	res->last = last;
-	res->size = size;
-	return (res);
-}
+	check_arg(argc);
+	a = generate_stack_a_content(argv, argc);
+	if (!a)
+		return (-1);
+	print_all_lst(a->data);
 
-void		free_stack(t_stack *st)
-{
-	if (st)
-	{
-		if (st->data)
-			free_all_lst(st->data);
-		free(st);
-	}
+	//select_algo(&tab, tab.size);
+	free_stack(a);
+	return (0);
 }

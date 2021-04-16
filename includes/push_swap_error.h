@@ -1,40 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_stack.h                                  :+:      :+:    :+:   */
+/*   push_swap_error.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 14:59:36 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 16:05:28 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/03/30 14:41:54 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/04/04 18:34:37 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_STACK_H
-# define PUSH_SWAP_STACK_H
+#ifndef PUSH_SWAP_ERROR_H
+# define PUSH_SWAP_ERROR_H
 
-# include "push_swap.h"
+# define MAX_ERROR 5
 
-typedef struct s_stack		t_stack;
-
-struct		s_stack
+enum	e_error
 {
-	t_lst	*data;
-	t_lst	*last;
-	int		size;
+	ERR_MALLOC,
+	ERR_ENTRY_NORM,
+	ERR_ENTRY_EMPTY,
+	ERR_INSTRUCTION,
+	ERR_DUPLICATE,
 };
 
-/*
-** malloc and free
-*/
-
-t_stack		*malloc_stack(t_lst *first, t_lst *last, int size);
-void		free_stack(t_stack *st);
-
-/*
-** generate all needed for a stack a (lst and checker norme lst)
-*/
-
-t_stack		*generate_stack_a_content(char **srcs, int size);
+int			error_push_swap(size_t error_nb);
+void		exit_error_push_swap(size_t error_nb);
 
 #endif

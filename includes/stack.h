@@ -1,40 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_stack.h                                  :+:      :+:    :+:   */
+/*   stack.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 14:59:36 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 16:05:28 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/04/15 13:34:57 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/04/15 13:56:11 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_STACK_H
 # define PUSH_SWAP_STACK_H
 
-# include "push_swap.h"
+#include "push_swap.h"
+/*
+typedef struct s_2stacks	t_2stacks;
+typedef	struct s_stack		t_stack;
 
-typedef struct s_stack		t_stack;
-
-struct		s_stack
+struct s_stack
 {
-	t_lst	*data;
-	t_lst	*last;
-	int		size;
+	int value;
+	s_stack	*next;
+	s_stack	*before;
 };
 
-/*
-** malloc and free
-*/
+struct s_2stacks
+{
+	t_stack	*a;
+	t_stack	*b;
+	int size_a;
+	int	size_b;
+};
 
-t_stack		*malloc_stack(t_lst *first, t_lst *last, int size);
-void		free_stack(t_stack *st);
-
-/*
-** generate all needed for a stack a (lst and checker norme lst)
-*/
-
-t_stack		*generate_stack_a_content(char **srcs, int size);
+s_2stacks	*create_2stacks(t_stack *a, t_stack *b, int size_a, int size_b);
+void		free_all_2stacks(s_2stacks	to_free);
+int			add_one_stack(t_stack *st, int value);
+int			*/
 
 #endif

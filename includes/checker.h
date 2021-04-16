@@ -1,40 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap_stack.h                                  :+:      :+:    :+:   */
+/*   checker.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/16 14:59:36 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 16:05:28 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/03/29 16:15:21 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/04/05 17:49:05 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_STACK_H
-# define PUSH_SWAP_STACK_H
+#ifndef CHECKER_H
+# define CHECKER_H
 
+# include "libft.h"
 # include "push_swap.h"
-
-typedef struct s_stack		t_stack;
-
-struct		s_stack
-{
-	t_lst	*data;
-	t_lst	*last;
-	int		size;
-};
-
-/*
-** malloc and free
-*/
-
-t_stack		*malloc_stack(t_lst *first, t_lst *last, int size);
-void		free_stack(t_stack *st);
-
-/*
-** generate all needed for a stack a (lst and checker norme lst)
-*/
-
-t_stack		*generate_stack_a_content(char **srcs, int size);
 
 #endif

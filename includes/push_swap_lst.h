@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:58:02 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 15:04:02 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/16 16:03:55 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,25 @@ struct		s_lst
 };
 
 /*
-** INIT
+** malloc new lst
 */
 
 t_lst		*add_first_lst(int data, t_lst *next);
 t_lst		*add_last_lst(int data, t_lst *last);
+
+/*
+** free and remove
+*/
+
 t_lst		*remove_first_lst(t_lst *first);
 t_lst		*remove_last_lst(t_lst *last);
-
 void		free_all_lst(t_lst	*l);
+
+/*
+** utils for lst
+*/
+
+t_lst		*get_last_lst(t_lst	*l);
+t_lst		*get_first_lst(t_lst *l);
 
 #endif
