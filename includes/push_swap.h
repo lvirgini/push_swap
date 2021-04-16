@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:16:12 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 16:07:14 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/16 17:53:38 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@
 # include "push_swap_error.h"
 # include "stdio.h" //
 
-//typedef void	(*t_func)(t_tab *);
+typedef void	(*t_func)(t_stack *, t_stack *);
 
 // a SUPPRIMER
 
 void		print_lst(t_lst *l);
 void		print_all_lst(t_lst *l);
+void	print_two_stacks(t_stack *a, t_stack *b);
 
 /*
 ** get data
@@ -34,7 +35,23 @@ void		print_all_lst(t_lst *l);
 int			is_doublons(t_lst *lst);
 void		check_arg(int argc);
 
+/*
+** Instruction
+*/
 
+int			get_instructions(t_stack *a, t_stack *b);
+
+void		do_sa(t_stack *a, t_stack *b);
+void		do_sb(t_stack *a, t_stack *b);
+void		do_ss(t_stack *a, t_stack *b);
+void		do_pa(t_stack *a, t_stack *b);
+void		do_pb(t_stack *a, t_stack *b);
+void		do_ra(t_stack *a, t_stack *b);
+void		do_rb(t_stack *a, t_stack *b);
+void		do_rr(t_stack *a, t_stack *b);
+void		do_rra(t_stack *a, t_stack *b);
+void		do_rrb(t_stack *a, t_stack *b);
+void		do_rrr(t_stack *a, t_stack *b);
 
 
 ///// TO TRANSLATE INT* TO LST

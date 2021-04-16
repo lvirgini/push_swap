@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 18:31:41 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 16:23:31 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/16 20:42:22 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ t_stack			*generate_stack_a_content(char **srcs, int size)
 		error_push_swap(ERR_DUPLICATE);
 		return (NULL);
 	}
-	a = malloc_stack(l, get_last_lst(l), size);
+	a = malloc_stack(l, get_last_lst(l), size - 1);
 	if (!a)
 	{
 		free_all_lst(l);

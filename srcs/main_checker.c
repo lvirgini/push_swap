@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_push_swap.c                                   :+:      :+:    :+:   */
+/*   main_checker.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 16:31:36 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 18:13:17 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/03/29 16:32:30 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/04/16 18:34:24 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-int				main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
 	t_stack		*a;
 	t_stack		*b;
@@ -22,8 +22,11 @@ int				main(int argc, char *argv[])
 	if (!a)
 		return (-1);
 	print_all_lst(a->first);
-
-	//select_algo(&tab, tab.size);
+	b = malloc_stack(NULL, NULL, 0);
+	if (get_instructions(a, b) == true)
+		ft_putstr("OK\n");
+	else
+		ft_putstr("KO\n");
 	free_stack(a);
 	return (0);
 }

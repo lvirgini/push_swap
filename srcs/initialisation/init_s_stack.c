@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 11:34:37 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 15:56:24 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/16 17:46:07 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_stack		*malloc_stack(t_lst *first, t_lst *last, int size)
 		error_push_swap(ERR_MALLOC);
 		return (NULL);
 	}
-	res->data = first;
+	res->first = first;
 	res->last = last;
 	res->size = size;
 	return (res);
@@ -36,8 +36,8 @@ void		free_stack(t_stack *st)
 {
 	if (st)
 	{
-		if (st->data)
-			free_all_lst(st->data);
+		if (st->first)
+			free_all_lst(st->first);
 		free(st);
 	}
 }

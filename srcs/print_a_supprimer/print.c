@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 20:09:31 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 12:00:14 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/16 17:46:20 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@ void	print_all_lst(t_lst *lst)
 	printf("\n");
 }
 
+void	print_two_stacks(t_stack *a, t_stack *b)
+{
+	printf("A : ");
+	print_all_lst(a->first);
+	printf("B : ");
+	print_all_lst(b->first);
+}
 /*
 void	print_tab_int(int	*tab, size_t size)
 {

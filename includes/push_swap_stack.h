@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:59:36 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 16:05:28 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/16 16:40:42 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ typedef struct s_stack		t_stack;
 
 struct		s_stack
 {
-	t_lst	*data;
+	t_lst	*first;
 	t_lst	*last;
 	int		size;
 };
