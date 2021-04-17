@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 19:15:50 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 20:41:39 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/17 12:48:19 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,10 @@ void		do_pa(t_stack *a, t_stack *b)
 		push(a, b);
 		a->size -= 1;
 		b->size += 1;
+		if (a->size == 0)
+			a->last = NULL;
+		if (b->size == 1)
+			b->last = b->first;
 	}
 }
 
@@ -64,5 +68,9 @@ void		do_pb(t_stack *a, t_stack *b)
 		push(b, a);
 		a->size += 1;
 		b->size -= 1;
+		if (b->size == 0)
+			b->last = NULL;
+		if (a->size == 1)
+			a->last = a->first;
 	}
 }

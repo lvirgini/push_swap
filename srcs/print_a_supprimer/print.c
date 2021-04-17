@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 20:09:31 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 17:46:20 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/17 12:30:56 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_lst(t_lst *l)
 {
-	printf("%d", l->data);
+	printf("%d\n", l->data);
 }
 
 void	print_all_lst(t_lst *lst)

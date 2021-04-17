@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 01:22:04 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 21:05:21 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/17 12:49:52 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 #include "push_swap.h"
 
-static void	rotate_lst(t_lst **first, t_lst **last) // DONT WORK FOR B ???
+static void	rotate_lst(t_lst **first, t_lst **last)
 {
 	(*first)->prev = *last;
 	*first = (*first)->next;
@@ -33,7 +33,7 @@ static void	rotate_lst(t_lst **first, t_lst **last) // DONT WORK FOR B ???
 **	The first element becomes the last one.
 */
 
-void		do_ra(t_stack *a, t_stack *b) 
+void		do_ra(t_stack *a, t_stack *b)
 {
 	(void)b;
 	if (a->size > 1)
