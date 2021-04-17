@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 18:31:41 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 20:42:22 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/17 13:59:14 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ static t_lst	*atoi_to_lst(char *src, t_lst *last)
 
 	if (ft_atoi_i(src, &data) == false)
 	{
+		printf("POUET\n");
 		error_push_swap(ERR_ENTRY_NORM);
 		return (NULL);
 	}

@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:16:12 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/17 13:00:34 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/17 18:42:36 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,9 @@ void		check_arg(int argc);
 /*
 ** Instruction
 */
-
+void		print_multi_list(int *list_instructions, int nb_instructions); // static ?
+void		print_one_instruction(int instruction); // static ?
+void		print_and_do(t_stack *a, t_stack *b, int instruction);
 int			get_instructions(t_stack *a, t_stack *b);
 void		do_sa(t_stack *a, t_stack *b);
 void		do_sb(t_stack *a, t_stack *b);
@@ -59,6 +61,14 @@ void		do_rrr(t_stack *a, t_stack *b);
 int			final_checker_order(t_stack *a, t_stack *b);
 int			check_order(t_lst *l);
 
+/*
+** Algo
+*/
+
+void		select_algo(t_stack *a, t_stack *b, int size);
+void		two_datas(t_stack *a);
+void		three_datas(t_stack *a);
+void		test_tri(t_stack *a, t_stack *b);
 
 ///// TO TRANSLATE INT* TO LST
 /*
@@ -66,24 +76,12 @@ int			check_order(t_lst *l);
 int			*get_integer_values_with_split(char *s);
 
 
-**	ALGO
 
-
-void		get_function_instructions(t_func *f);
-void		print_one_instruction(int instruction);
-void		print_multi_list(int *list_instructions, int nb_instructions);
-void		print_and_do(t_tab *tab, int instruction);
-void		select_algo(t_tab *tab, int size);
 void		two_datas(t_tab *tab);
 void		three_datas(t_tab *tab, int *datas);
 void		test_tri(t_tab *tab, int *data, int *a, int *b);
 void		insertion_sort( t_tab *tab, int *data, int *a, int *b);
 void	 	selection_sort(t_tab *tab, int *data, int *a, int *b);
 
-
-** final checker
-
-
-int			final_checker_order(int	*a, int size_b, int size_a);
 */
 #endif

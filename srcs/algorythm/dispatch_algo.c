@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_push_swap.c                                   :+:      :+:    :+:   */
+/*   dispatch_algo.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 16:31:36 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/17 13:44:33 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/04/04 15:39:31 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/04/17 18:43:02 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int				main(int argc, char *argv[])
-{
-	t_stack		*a;
-	t_stack		*b;
+/*
+** select the best algorithm according to the size of tab
+*/
 
-	check_arg(argc);
-	a = generate_stack_a_content(argv, argc);
-	if (!a)
-		return (-1);
-	b = malloc_stack(NULL, NULL, 0);
-	//print_all_lst(a->first);
-	select_algo(a, b, a->size);
-	free_stack(a);
-	free_stack(b);
-	return (0);
+void	select_algo(t_stack *a, t_stack *b, int size)
+{
+	if (size == 1)
+		return ;
+	else if (size == 2)
+		two_datas(a);
+	else if (size == 3)
+		three_datas(a);
+	//else
+	//	insertion_sort(tab, tab->data, &tab->a, &tab->b);
+	else
+		test_tri(a, b);
+//	else
+	//	selection_sort(tab, tab->data, &tab->a, &tab->b);
 }
