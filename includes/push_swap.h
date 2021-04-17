@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:16:12 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 17:53:38 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/17 13:00:34 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef void	(*t_func)(t_stack *, t_stack *);
 
 void		print_lst(t_lst *l);
 void		print_all_lst(t_lst *l);
-void	print_two_stacks(t_stack *a, t_stack *b);
+void		print_two_stacks(t_stack *a, t_stack *b);
 
 /*
 ** get data
@@ -40,7 +40,6 @@ void		check_arg(int argc);
 */
 
 int			get_instructions(t_stack *a, t_stack *b);
-
 void		do_sa(t_stack *a, t_stack *b);
 void		do_sb(t_stack *a, t_stack *b);
 void		do_ss(t_stack *a, t_stack *b);
@@ -53,37 +52,18 @@ void		do_rra(t_stack *a, t_stack *b);
 void		do_rrb(t_stack *a, t_stack *b);
 void		do_rrr(t_stack *a, t_stack *b);
 
+/*
+** checker
+*/
+
+int			final_checker_order(t_stack *a, t_stack *b);
+int			check_order(t_lst *l);
+
 
 ///// TO TRANSLATE INT* TO LST
 /*
 
 int			*get_integer_values_with_split(char *s);
-
-
-** basics operations authorized for push_swap
-
-
-void		swap_int(int *a, int *b);
-void		rotate_data(int *data, int begin, int max);
-void		inverse_rotate_data(int *data, int begin, int max);
-
-
-** make instructions
-
-
-void		get_function_instructions(t_func *f);
-int			get_instructions(t_tab *tab);
-void		do_sa(t_tab *tab);
-void		do_sb(t_tab *tab);
-void		do_ss(t_tab *tab);
-void		do_pa(t_tab *tab);
-void		do_pb(t_tab *tab);
-void		do_ra(t_tab *tab);
-void		do_rb(t_tab *tab);
-void		do_rr(t_tab *tab);
-void		do_rra(t_tab *tab);
-void		do_rrb(t_tab *tab);
-void		do_rrr(t_tab *tab);
 
 
 **	ALGO

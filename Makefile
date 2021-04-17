@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 16:30:55 by lvirgini          #+#    #+#              #
-#    Updated: 2021/04/16 17:50:32 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/04/17 13:01:23 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRC_COMMUN = init_s_stack.c 	\
 			reverse_rotate.c 	\
 			push.c 				\
 			swap.c 				\
+			check_order.c		\
 			print.c \
 
 

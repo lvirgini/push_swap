@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_checker.c                                     :+:      :+:    :+:   */
+/*   check_order.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 16:32:30 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/17 12:53:33 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/04/04 14:00:41 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/04/17 13:04:51 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
-int		main(int argc, char *argv[])
+int			check_order(t_lst *l)
 {
-	t_stack		*a;
-	t_stack		*b;
+	while (l->next)
+	{
+		if (l->data > l->next->data)
+			return (false);
+		l = l->next;
+	}
+	return (true);
+}
 
-	check_arg(argc);
-	a = generate_stack_a_content(argv, argc);
-	if (!a)
-		return (-1);
-	print_all_lst(a->first);
-	b = malloc_stack(NULL, NULL, 0);
-	if (get_instructions(a, b) == true)
-		ft_putstr("OK\n");
-	else
-		ft_putstr("KO\n");
-	free_stack(a);
-	free_stack(b);
-	return (0);
+int			final_checker_order(t_stack *a, t_stack *b)
+{
+	if (b->size != 0)
+		return (false);
+	return (check_order(a->first));
 }
