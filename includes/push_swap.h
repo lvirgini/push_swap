@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:16:12 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/17 18:42:36 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/20 11:17:02 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ typedef void	(*t_func)(t_stack *, t_stack *);
 // a SUPPRIMER
 
 void		print_lst(t_lst *l);
+void		print_this_lst(t_lst *l, int index);
 void		print_all_lst(t_lst *l);
 void		print_two_stacks(t_stack *a, t_stack *b);
 
@@ -38,7 +39,8 @@ void		check_arg(int argc);
 /*
 ** Instruction
 */
-void		print_multi_list(int *list_instructions, int nb_instructions); // static ?
+void		print_and_do_multi(t_stack *a, t_stack *b, int instruction,
+				int mult);
 void		print_one_instruction(int instruction); // static ?
 void		print_and_do(t_stack *a, t_stack *b, int instruction);
 int			get_instructions(t_stack *a, t_stack *b);

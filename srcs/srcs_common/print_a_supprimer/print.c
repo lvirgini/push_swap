@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 20:09:31 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/17 12:30:56 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/20 10:24:51 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,18 @@ void	print_two_stacks(t_stack *a, t_stack *b)
 	printf("B : ");
 	print_all_lst(b->first);
 }
+
+ void	print_this_lst(t_lst *l, int index)
+ {
+	printf("index = %d\n", index);
+	while (l && --index > 0)
+		l = l->next;
+	if (!l)
+		printf("index is not valide int PRINT THIS LST");
+	else
+		print_lst(l);
+ }
+
 /*
 void	print_tab_int(int	*tab, size_t size)
 {

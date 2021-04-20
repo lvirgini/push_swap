@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 13:21:41 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/17 13:23:49 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/20 11:25:53 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,18 +45,8 @@ void		print_and_do(t_stack *a, t_stack *b, int instruction)
 **	print multi instructions
 */
 
-void		print_multi_list(int *list_instructions, int nb_instructions)
+void		print_and_do_multi(t_stack *a, t_stack *b, int instruction, int mult)
 {
-	static char	*guidelines[] = {PRINT_SA, PRINT_SB, PRINT_SS, PRINT_PA,
-	PRINT_PB, PRINT_RA, PRINT_RB, PRINT_RR, PRINT_RRA, PRINT_RRB, PRINT_RRR};
-	int			i;
-
-	i = 0;
-	while (i < nb_instructions)
-	{
-		if (list_instructions[i] != -1)
-		{
-			ft_putstr(guidelines[list_instructions[i]]);
-		}
-	}
+	while (mult-- > 0)
+		print_and_do(a, b, instruction);
 }

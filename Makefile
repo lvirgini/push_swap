@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 16:30:55 by lvirgini          #+#    #+#              #
-#    Updated: 2021/04/17 18:42:49 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/04/20 11:23:19 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRC_COMMUN = init_s_stack.c 	\
 			push.c 				\
 			swap.c 				\
 			check_order.c		\
+			print_instruction.c \
 			print.c \
 
 
@@ -45,7 +46,6 @@ SRC_PU	=	$(SRC_COMMUN) main_push_swap.c	\
 			two_datas.c			\
 			three_datas.c		\
 			tri_test.c			\
-			print_instruction.c
 
 
 SRC_CH	= $(SRC_COMMUN) main_checker.c		\
