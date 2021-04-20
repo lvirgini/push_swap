@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 16:30:55 by lvirgini          #+#    #+#              #
-#    Updated: 2021/04/20 11:23:19 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/04/20 16:38:08 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,10 @@ LIB		=	ft
 SRC_COMMUN = init_s_stack.c 	\
 			lst_free.c 			\
 			lst_malloc.c 		\
-			error.c 			\
 			lst_utils.c			\
+			lst_find_nearest.c	\
+			lst_find_min_max.c	\
+			error.c 			\
 			utils.c				\
 			get_data.c			\
 			rotate.c 			\
@@ -37,15 +39,18 @@ SRC_COMMUN = init_s_stack.c 	\
 			swap.c 				\
 			check_order.c		\
 			print_instruction.c \
-			print.c \
+			print.c 	\
+			three_datas.c		\
+			push_in_order.c		\
+			rotate_min_instruction.c \
 
 
 			
 SRC_PU	=	$(SRC_COMMUN) main_push_swap.c	\
 			dispatch_algo.c		\
 			two_datas.c			\
-			three_datas.c		\
 			tri_test.c			\
+			selection_sort.c	\
 
 
 SRC_CH	= $(SRC_COMMUN) main_checker.c		\
@@ -83,7 +88,7 @@ all:		install $(NAME_PUSH_SWAP) $(NAME_CHECKER)
 
 $(OBJ_DIR)%.o: %.c $(HEADERS)
 			@mkdir -p $(OBJ_DIR)
-			@echo "\033[32mCompilation de ... $(foreach file, $< , $(notdir $<))"
+			@echo "\033[32mCompilation de ... $(foreach file, $< , $(notdir $<))\033[0m"
 			@$(CC) $(CFLAG) $(IFLAG) -o $@ -c $< 
 
 

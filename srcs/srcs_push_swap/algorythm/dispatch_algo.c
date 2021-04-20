@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 15:39:31 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/17 18:43:02 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:40:13 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	select_algo(t_stack *a, t_stack *b, int size)
 		three_datas(a);
 	//else
 	//	insertion_sort(tab, tab->data, &tab->a, &tab->b);
+/*	else
+		test_tri(a, b);*/
 	else
-		test_tri(a, b);
-//	else
-	//	selection_sort(tab, tab->data, &tab->a, &tab->b);
+		selection_sort(a, b);
 }

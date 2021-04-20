@@ -6,14 +6,13 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 12:41:15 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/20 13:35:32 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/20 17:04:23 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-int		find_nearest_data_lst(t_lst *l, int data)
+int		find_nearest_data_lst(t_lst *l, int data) //////
 {
 	int		i;
 	int		index_smallest_gap;
@@ -40,25 +39,30 @@ int		find_nearest_data_lst(t_lst *l, int data)
 
 int		find_closest_min_data_lst(t_lst *l, int data)
 {
-		int		i;
+	int		i;
 	int		index_closest;
 	int		closest;
-	int		curr;
+	int		current;
 	
 	i = 0;
-	index_closest = 0;
-	closest = data;
-	l = l->next;
+	closest = -1;
+	while (l && closest < 0)
+	{
+		closest = data - l->data;
+		l = l->next;
+		i++;
+	}
+	index_closest = closest < 0 ? -1 : i - 1;
 	while(l)
 	{
-		curr = data - l->data;
-		if (curr_gap > 0 && curr < closest)
+		current = data - l->data;
+		if (current > 0 && current < closest)
 		{
-			closest = curr_gap;
-			index_smallest_gap = i;
+			closest = current;
+			index_closest = i;
 		}
 		i++;
 		l = l->next;
 	}
-	return (index_smallest_gap);
+	return (index_closest);
 }

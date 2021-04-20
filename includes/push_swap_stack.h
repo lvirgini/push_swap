@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 14:59:36 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 16:40:42 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:37:40 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,14 @@ void		free_stack(t_stack *st);
 */
 
 t_stack		*generate_stack_a_content(char **srcs, int size);
+
+/*
+** Utils for algorythms
+*/
+
+void	push_first_a_in_order_on_b(t_stack *a, t_stack *b);
+void	push_min_a_in_order_on_b(t_stack *a, t_stack *b);
+void	rotate_a_with_minimal_instruction(t_stack *a, int index);
+void	rotate_b_with_minimal_instruction(t_stack *b, int index);
 
 #endif

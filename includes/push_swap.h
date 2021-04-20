@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:16:12 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/20 11:17:02 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/20 16:40:31 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ void		select_algo(t_stack *a, t_stack *b, int size);
 void		two_datas(t_stack *a);
 void		three_datas(t_stack *a);
 void		test_tri(t_stack *a, t_stack *b);
+void		selection_sort(t_stack *a, t_stack *b);
+void		insertion_sort(t_stack *a, t_stack *b);
 
 ///// TO TRANSLATE INT* TO LST
 /*
