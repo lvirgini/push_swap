@@ -6,11 +6,17 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 13:32:22 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/20 10:40:24 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/27 15:47:12 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/*
+** Solves with the minimum of instructions all possibilities for 3 values.
+** Can be used with larger stacks: it puts the first, second and last
+** in the right order.
+*/
 
 static void	three_data_132(t_stack *a)
 {

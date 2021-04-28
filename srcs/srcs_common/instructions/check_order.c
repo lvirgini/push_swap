@@ -6,15 +6,19 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 14:00:41 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/17 13:04:51 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 12:07:04 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*
+** check if the list is sorted in ascending order
+*/
+
 int			check_order(t_lst *l)
 {
-	while (l->next)
+	while (l && l->next)
 	{
 		if (l->data > l->next->data)
 			return (false);
@@ -23,9 +27,16 @@ int			check_order(t_lst *l)
 	return (true);
 }
 
+/*
+** check if stack b is empty and a in order
+*/
+
 int			final_checker_order(t_stack *a, t_stack *b)
 {
 	if (b->size != 0)
 		return (false);
 	return (check_order(a->first));
 }
+/*
+-147 -356 -784 -727 -562 -479 -350 312 592 -309 -156 0 -793 320 236 250 -331 -467 916 -105 393 -595 -20 -966 846 -921 -827 704 -548 -281 -661 242 598 -242 468 -131 -775 101 137 -286 -924 104 129 141 863 161 261 -582 -104 573 -26 436 -782 -980 576 806 867 49 -12 -937 -97 -799 199 38 -419 269 -619 85 866 -786 -13 905 487 176 -612 139 -377 -332 150 -876 335 594 144 272 -126 985 -533 467 -706 235 209 -125 920 286 356 970 -545
+804*/

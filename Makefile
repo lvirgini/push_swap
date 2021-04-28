@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 16:30:55 by lvirgini          #+#    #+#              #
-#    Updated: 2021/04/20 16:38:08 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/04/27 15:39:05 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,6 @@ SRC_COMMUN = init_s_stack.c 	\
 			lst_free.c 			\
 			lst_malloc.c 		\
 			lst_utils.c			\
-			lst_find_nearest.c	\
-			lst_find_min_max.c	\
 			error.c 			\
 			utils.c				\
 			get_data.c			\
@@ -38,23 +36,31 @@ SRC_COMMUN = init_s_stack.c 	\
 			push.c 				\
 			swap.c 				\
 			check_order.c		\
+			print.c 			\
+
+
+				
+SRC_PU_TO_COMMUN = 	dispatch_algo.c		\
+			lst_find_nearest.c	\
+			lst_find_min_max.c	\
 			print_instruction.c \
-			print.c 	\
-			three_datas.c		\
-			push_in_order.c		\
-			rotate_min_instruction.c \
-
-
-			
-SRC_PU	=	$(SRC_COMMUN) main_push_swap.c	\
-			dispatch_algo.c		\
+			test_instructions.c	\
 			two_datas.c			\
+			three_datas.c		\
+			rotate_min_instruction.c \
 			tri_test.c			\
 			selection_sort.c	\
+			insertion_sort.c	\
+			push_in_order.c		\
+			t_opti.c			\
+			
+SRC_PU	=	$(SRC_COMMUN) $(SRC_PU_TO_COMMUN) main_push_swap.c	\
+			
 
+SRC_CH	= $(SRC_COMMUN) $(SRC_PU_TO_COMMUN) main_checker.c		\
+			get_instruction.c	\
+			get_verbose_instruction.c \
 
-SRC_CH	= $(SRC_COMMUN) main_checker.c		\
-			get_instruction.c
 				
 			
 

@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 11:50:51 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/17 19:29:43 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/23 11:41:27 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ int		test_tri_for_b(int first, int second, int last)
 		return (SB);
 }
 
-
 void		test_tri(t_stack *a, t_stack *b)
 {
 	int	ia;
@@ -70,11 +69,11 @@ void		test_tri(t_stack *a, t_stack *b)
 				print_and_do(a, b, ia);
 			}
 			else if (ia == SA)
-					print_and_do(a, b, ib == SB ? SS : ia);
+					print_and_do(a, b, test_ss_for_b(b->first) ? SS : ia);
 			else if (ia == RA)
-					print_and_do(a, b, ib == RB ? RR : ia);
+					print_and_do(a, b, test_rr_for_b(b->first, b->last) ? RR : ia);
 			else if (ia == RRA)
-					print_and_do(a, b, ib == RRB ? RRR : ia);
+					print_and_do(a, b, test_rrr_for_b(b->first, b->last) ? RRR : ia);
 			else
 				print_and_do(a, b, ia);
 		}

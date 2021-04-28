@@ -6,11 +6,21 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 16:28:25 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/20 17:09:51 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/26 16:44:19 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int		get_index_for_push(int data, t_lst	*l)
+{
+	int index;
+	
+	index = find_closest_min_data_lst(l, data);
+	if (index == -1)
+		index = find_min_data_lst(l) + 1;
+	return (index);
+}
 
 /*
 ** get in stack b the closest min from a->first
@@ -23,16 +33,23 @@ void	push_first_a_in_order_on_b(t_stack *a, t_stack *b)
 
 	if (b->size >= 1)
 	{
-		insert = find_closest_min_data_lst(b->first, a->first->data);
-		if (insert == -1)
-		{
-			printf("INSERT -1 %%%%%%%%%%%%%%%%%%%%%%%%%%\n");
-			insert = find_min_data_lst(b->first) + 1;
-		}
+		insert = get_index_for_push(a->first->data, b->first);
 		rotate_b_with_minimal_instruction(b, insert);
 	}
 	print_and_do(a, b, PA);
+}
 
+
+void	push_first_b_in_order_on_a(t_stack *a, t_stack *b)
+{
+	int insert;
+
+	if (a->size >= 1)
+	{
+		insert = get_index_for_push(b->first->data, a->first);
+		rotate_a_with_minimal_instruction(a, insert);
+	}
+	print_and_do(a, b, PB);
 }
 
 /*
