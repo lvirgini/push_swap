@@ -6,11 +6,12 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 20:09:31 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/20 10:24:51 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 19:19:28 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "stdio.h"
 
 void	print_lst(t_lst *l)
 {

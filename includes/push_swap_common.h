@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dispatch_algo.c                                    :+:      :+:    :+:   */
+/*   push_swap_common.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/04 15:39:31 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 18:48:02 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/04/28 18:24:04 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/04/28 19:18:19 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef PUSH_SWAP_COMMON_H
+# define PUSH_SWAP_COMMON_H
 
-/*
-** select the best algorithm according to the size of tab
-*/
+# include "libft.h"
+# include "push_swap_define.h"
+# include "push_swap_error.h"
+# include "push_swap_lst.h"
+# include "push_swap_stack.h"
 
-void	select_algo(t_stack *a, t_stack *b, int size)
-{
-	if (size == 1)
-		return ;
-	else if (size == 2)
-		two_datas(a);
-	else if (size == 3)
-		three_datas(a);
-	else if (size < 10)
-		test_tri(a, b);
-	else
-		insertion_sort(a, b);
-}
+#endif

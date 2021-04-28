@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 15:30:00 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 15:31:01 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 19:12:21 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static t_opti	ret_optimize_push_to_pop(t_opti first, t_opti second, t_opti last)
 ** generate three easy possibilities for push with the minimal instruction 
 */
 
-t_opti		optimize_push_to_pop(t_stack *st, t_stack *to_pop, int size)
+t_opti		optimize_push_to_pop(t_stack *st, t_stack *to_pop)
 {
 	t_opti	first;
 	t_opti	second;
@@ -73,8 +73,6 @@ t_opti		optimize_push_to_pop(t_stack *st, t_stack *to_pop, int size)
 	last =  generate_t_opti(st->last->data, st->size, st->size, to_pop);
 	get_total_rotate_opti(&second);
 	get_total_rotate_opti(&last);
-	//second.total = second.type_rotate == ROTATE ? second.nb_rotate : second.nb_rotate + 1;
-	//last.total = last.type_rotate == INVERSE_ROTATE ? last.nb_rotate : last.nb_rotate + 1;
 	return (ret_optimize_push_to_pop(first, second, last));
 }
 

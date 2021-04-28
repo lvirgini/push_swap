@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:16:12 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 15:01:19 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 19:23:10 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
-# include "push_swap_define.h"
-# include "push_swap_lst.h"
-# include "push_swap_stack.h"
-# include "push_swap_error.h"
-# include "stdio.h" //
+# include "push_swap_common.h"
 
 typedef void	(*t_func)(t_stack *, t_stack *);
 
@@ -26,15 +22,13 @@ typedef struct s_opti	t_opti;
 
 enum	e_opti_list
 {
-	
 	FIRST = 0,
 	SECOND,
 	LAST,
 };
 
-struct s_opti
+struct		s_opti
 {
-	int a_list;
 	int b_type_rotate;
 	int a_type_rotate;
 	int a_index;
@@ -44,7 +38,6 @@ struct s_opti
 	int common_rotate;
 	int total;
 };
-
 
 // a SUPPRIMER
 
@@ -66,7 +59,6 @@ void		check_arg(int argc);
 */
 void		print_and_do_multi(t_stack *a, t_stack *b, int instruction,
 				int mult);
-void		print_one_instruction(int instruction); // static ?
 void		print_and_do(t_stack *a, t_stack *b, int instruction);
 int			get_instructions(t_stack *a, t_stack *b);
 void		do_sa(t_stack *a, t_stack *b);
@@ -113,14 +105,14 @@ void		insertion_sort(t_stack *a, t_stack *b);
 /*
 ** optimisation and usefull help for algo
 */
-void			get_total_rotate_opti(t_opti *op);
+
+void		get_total_rotate_opti(t_opti *op);
 int			get_type_of_rotation(int index, int half_size);
 int			get_min_instruction_for_rotate(int type, int index, int size);
 int			get_index_for_push(int data, t_lst	*l);
-t_opti		optimize_push_to_pop(t_stack *st, t_stack *to_pop, int size);
+t_opti		optimize_push_to_pop(t_stack *st, t_stack *to_pop);
 t_opti		check_other_opti(t_opti op, t_stack *a, t_stack *b);
 
-///// TO TRANSLATE INT* TO LST
 /*
 ** int			*get_integer_values_with_split(char *s);
 */

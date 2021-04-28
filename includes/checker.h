@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:15:21 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/05 17:49:05 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 18:25:59 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 # define CHECKER_H
 
 # include "libft.h"
-# include "push_swap.h"
+# include "push_swap_common.h"
 
 #endif

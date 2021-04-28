@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 23:50:04 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/17 18:58:16 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 17:29:58 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ static int		is_instruction(char *line)
 	while (i < 11)
 	{
 		if (ft_strcmp(line, guidelines[i]) == 0)
-		{
 			return (i);
-		}
 		i++;
 	}
 	return (-1);
@@ -70,7 +68,6 @@ int				get_instructions(t_stack *a, t_stack *b)
 			exit_error_push_swap(ERR_INSTRUCTION);
 		}
 		f[instruction](a, b);
-		//print_two_stacks(a, b);
 	}
 	free(line);
 	return (final_checker_order(a, b));

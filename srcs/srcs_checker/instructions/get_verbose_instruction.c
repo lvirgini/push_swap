@@ -6,11 +6,12 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 18:26:28 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 12:00:55 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 19:19:04 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "stdio.h"
 
 //// A SUPPRIMER
 int			check_order_verbose(t_lst *l)
@@ -35,6 +36,7 @@ int			final_checker_order_verbose(t_stack *a, t_stack *b)
 	return (check_order_verbose(a->first));
 }
 
+
 static int		is_instruction(char *line)
 {
 	static const char	*guidelines[] = {STR_SA, STR_SB, STR_SS, STR_PA,
@@ -54,6 +56,7 @@ static int		is_instruction(char *line)
 	return (-1);
 }
 
+
 static void		get_function_instructions(t_func *f)
 {
 	f[SA] = &do_sa;
@@ -68,6 +71,7 @@ static void		get_function_instructions(t_func *f)
 	f[RRB] = &do_rrb;
 	f[RRR] = &do_rrr;
 }
+
 
 /*
 ** Get instruction from entry standard

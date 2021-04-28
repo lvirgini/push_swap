@@ -1,51 +1,69 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_free.c                                         :+:      :+:    :+:   */
+/*   init_lst.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 11:29:01 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 15:08:56 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 18:35:48 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_common.h"
 
 /*
-** free (last)
-** return last->prev
+** Create lst
 */
 
-t_lst			*remove_last_lst(t_lst *last)
+static t_lst	create_lst(int data, t_lst *next, t_lst *prev)
 {
-	t_lst	*prev;
+	t_lst	l;
 
-	if (!last)
-		return (NULL);
-	prev = last->prev;
-	if (prev)
-		prev->next = NULL;
-	free(last);
-	return (prev);
+	l.data = data;
+	l.next = next;
+	l.prev = prev;
+	return (l);
 }
 
 /*
-** free(first)
-** return (first->next);
+** malloc and free t_lst : (double lst);
+**
+**	add = first
 */
 
-t_lst			*remove_first_lst(t_lst *first)
+t_lst			*add_first_lst(int data, t_lst *next)
 {
-	t_lst	*next;
+	t_lst	*add;
 
-	if (!first)
+	add = (t_lst *)malloc(sizeof(t_lst));
+	if (add == NULL)
+	{
+		error_push_swap(ERR_MALLOC);
 		return (NULL);
-	next = first->next;
-	if (next)
-		next->prev = NULL;
-	free(first);
-	return (next);
+	}
+	*add = create_lst(data, next, NULL);
+	return (add);
+}
+
+/*
+** add = last
+*/
+
+t_lst			*add_last_lst(int data, t_lst *last)
+{
+	t_lst	*add;
+
+	add = (t_lst *)malloc(sizeof(t_lst));
+	if (add == NULL)
+	{
+		error_push_swap(ERR_MALLOC);
+		return (NULL);
+	}
+	*add = create_lst(data, NULL, last);
+	if (last)
+		last->next = add;
+	return (add);
 }
 
 /*

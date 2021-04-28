@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 13:21:41 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/26 14:46:10 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 19:21:01 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** print solo instruction
 */
 
-void		print_one_instruction(int instruction)
+static void	print_one_instruction(int instruction)
 {
 	static char	*guidelines[] = {PRINT_SA, PRINT_SB, PRINT_SS, PRINT_PA,
 	PRINT_PB, PRINT_RA, PRINT_RB, PRINT_RR, PRINT_RRA, PRINT_RRB, PRINT_RRR};
@@ -33,7 +33,7 @@ void		print_and_do(t_stack *a, t_stack *b, int instruction)
 {
 	static t_func f[MAX_INSTRUCTION] = {&do_sa, &do_sb, &do_ss, &do_pa, &do_pb,
 				&do_ra, &do_rb, &do_rr, &do_rra, &do_rrb, &do_rrr};
-	
+
 	if (instruction < MAX_INSTRUCTION)
 	{
 		f[instruction](a, b);
@@ -45,7 +45,8 @@ void		print_and_do(t_stack *a, t_stack *b, int instruction)
 **	print multi instructions
 */
 
-void		print_and_do_multi(t_stack *a, t_stack *b, int instruction, int mult)
+void		print_and_do_multi(t_stack *a, t_stack *b, int instruction,
+			int mult)
 {
 	while (mult-- > 0)
 		print_and_do(a, b, instruction);

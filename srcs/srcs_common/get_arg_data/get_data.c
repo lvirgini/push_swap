@@ -6,11 +6,11 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 18:31:41 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/20 14:27:32 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 18:30:04 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_common.h"
 
 /*
 ** check all values in lst to find duplicate

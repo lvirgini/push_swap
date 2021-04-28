@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 15:55:53 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 15:20:59 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 19:12:00 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** return rotate or inverse rotate
 */
 
-int				get_type_of_rotation(int index, int half_size)
+int		get_type_of_rotation(int index, int half_size)
 {
 	if (index > half_size)
 		return (INVERSE_ROTATE);
@@ -24,10 +24,10 @@ int				get_type_of_rotation(int index, int half_size)
 }
 
 /*
-** return number of necessary rotation 
+** return number of necessary rotation
 */
 
-int			get_min_instruction_for_rotate(int type, int index, int size)
+int		get_min_instruction_for_rotate(int type, int index, int size)
 {
 	if (type == INVERSE_ROTATE || type == RRA || type == RRB)
 		return (size - index);

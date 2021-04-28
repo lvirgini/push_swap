@@ -6,16 +6,16 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 16:28:25 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/26 16:44:19 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 19:10:37 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		get_index_for_push(int data, t_lst	*l)
+int		get_index_for_push(int data, t_lst *l)
 {
 	int index;
-	
+
 	index = find_closest_min_data_lst(l, data);
 	if (index == -1)
 		index = find_min_data_lst(l) + 1;
@@ -38,7 +38,6 @@ void	push_first_a_in_order_on_b(t_stack *a, t_stack *b)
 	}
 	print_and_do(a, b, PA);
 }
-
 
 void	push_first_b_in_order_on_a(t_stack *a, t_stack *b)
 {

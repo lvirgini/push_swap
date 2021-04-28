@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:29:28 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/22 12:20:30 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 19:17:53 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ enum	e_instruction
 	RRR,
 };
 
-enum	opti_instruction
+enum	e_opti_instruction
 {
 	ROTATE,
 	INVERSE_ROTATE,
