@@ -6,14 +6,14 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:31:36 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 18:13:22 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/28 21:19:51 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*
-** PUSH SWAP : 
+** PUSH SWAP :
 ** receive as an argument the stack A formatted as a list of integers.
 ** The first argument is at the top of the stack.
 ** The program display the smallest list of instructions possible to sort
@@ -31,7 +31,6 @@ int				main(int argc, char *argv[])
 	if (!a)
 		return (-1);
 	b = malloc_stack(NULL, NULL, 0);
-	//print_all_lst(a->first);
 	select_algo(a, b, a->size);
 	free_stack(a);
 	free_stack(b);

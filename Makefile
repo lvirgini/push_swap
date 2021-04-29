@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 16:30:55 by lvirgini          #+#    #+#              #
-#    Updated: 2021/04/28 19:13:56 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/04/28 21:37:20 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,9 +35,8 @@ SRC_COMMON = init_s_stack.c 	\
 			push.c 				\
 			swap.c 				\
 			check_order.c		\
-			print.c 			\
-			
-			
+			print.c 				
+
 SRC_PU	=	$(SRC_COMMON) main_push_swap.c	\
 			print_instruction.c \
 			dispatch_algo.c		\
@@ -51,13 +50,11 @@ SRC_PU	=	$(SRC_COMMON) main_push_swap.c	\
 			rotate_min_instruction.c \
 			push_in_order.c		\
 			t_opti.c			\
+			t_opti_insertion_sort.c \
 			
 SRC_CH	= $(SRC_COMMON) main_checker.c		\
 			get_instruction.c	\
 			get_verbose_instruction.c \
-
-				
-			
 
 OBJ_PU 	=	$(addprefix $(OBJ_DIR),$(SRC_PU:%.c=%.o))
 OBJ_CH 	=	$(addprefix $(OBJ_DIR),$(SRC_CH:%.c=%.o))
@@ -91,7 +88,6 @@ $(OBJ_DIR)%.o: %.c $(HEADERS)
 			@mkdir -p $(OBJ_DIR)
 			@echo "\033[32mCompilation de ... $(foreach file, $< , $(notdir $<))\033[0m"
 			@$(CC) $(CFLAG) $(IFLAG) -o $@ -c $< 
-
 
 
 #$(NAME): 	$(OBJ)
