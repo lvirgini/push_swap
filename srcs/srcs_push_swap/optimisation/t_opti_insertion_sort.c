@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 21:34:06 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 21:38:43 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/29 14:21:25 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,13 @@
 ** Optimize Push A to B for Insertion Sort :
 ** carreful : st must have more are egal than 3 values.
 ** generate three easy possibilities for push with the minimal instruction.
+**
+** ex : index : 
+** A = 0 1 2 3 ...... 3 2 1
+**
+** check index 0 : get nb instructions
+** while nb_instruction-- check index 1++
+** get the minimum instruction and push a into b.
 */
 
 static t_opti	ret_optimize_push_to_pop(t_opti first, t_opti second,
