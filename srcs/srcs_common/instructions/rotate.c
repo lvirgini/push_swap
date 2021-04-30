@@ -6,17 +6,17 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 01:22:04 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/17 12:49:52 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/30 22:45:35 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap_common.h"
 
 /*
 ** last become new last->prev
 ** first become new last,
 ** second become new first
 */
-
-#include "push_swap.h"
 
 static void	rotate_lst(t_lst **first, t_lst **last)
 {

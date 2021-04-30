@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:16:12 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/29 14:13:13 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/30 22:47:20 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,20 @@
 # include "libft.h"
 # include "push_swap_common.h"
 
-typedef struct s_opti	t_opti;
-
 enum	e_opti_list
 {
 	FIRST = 0,
 	SECOND,
 	LAST,
 };
+
+enum	e_opti_instruction
+{
+	ROTATE,
+	INVERSE_ROTATE,
+};
+
+typedef struct s_opti	t_opti;
 
 struct		s_opti
 {
@@ -70,16 +76,20 @@ void		insertion_sort(t_stack *a, t_stack *b);
 ** optimisation and usefull help for algo
 */
 
-int			get_type_of_rotation(int index, int half_size);
-int			get_min_instruction_for_rotate(int type, int index, int size);
-int			get_index_for_push(int data, t_lst	*l);
+void		optimize_insertion_sort(t_stack *a, t_stack *b);
 t_opti		generate_t_opti(int data, int a_index, int a_size,
 									t_stack *b);
 t_opti		check_other_opti(t_opti op, t_stack *a, t_stack *b);
-void		optimize_insertion_sort(t_stack *a, t_stack *b);
-
-/*
-** int			*get_integer_values_with_split(char *s);
-*/
+int			find_max_data_lst(t_lst *l);
+int			find_min_data_lst(t_lst *l);
+int			find_closest_min_data_lst(t_lst *l, int data);
+int			get_type_of_rotation(int index, int half_size);
+int			get_min_instruction_for_rotate(int type, int index, int size);
+int			get_index_for_push(int data, t_lst	*l);
+void		push_first_b_in_order_on_a(t_stack *a, t_stack *b);
+void		push_first_a_in_order_on_b(t_stack *a, t_stack *b);
+void		push_min_a_in_order_on_b(t_stack *a, t_stack *b);
+void		rotate_a_with_minimal_instruction(t_stack *a, int index);
+void		rotate_b_with_minimal_instruction(t_stack *b, int index);
 
 #endif

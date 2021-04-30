@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 15:55:53 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 19:12:00 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/30 22:55:28 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,27 +64,3 @@ void	rotate_b_with_minimal_instruction(t_stack *b, int index)
 	else
 		print_and_do_multi(NULL, b, RB, index);
 }
-
-/*
-
-static void	rotate_st_with_minimal_instruction(t_stack *st, int index, int rr, int r)
-{
-	if (index == 0)
-		return ;
-	else if (index > st->size / 2)
-		print_and_do_multi(NULL, st, rr, st->size - index);
-	else
-		print_and_do_multi(NULL, st, r, index);
-}
-
-
-void	rotate_b_with_minimal_instruction(t_stack *b, int index)
-{
-	rotate_st_with_minimal_instruction(b, index, RRB, RB);
-}
-
-
-void	rotate_a_with_minimal_instruction(t_stack *a, int index)
-{
-	rotate_st_with_minimal_instruction(a, index, RRA, RA);
-}*/

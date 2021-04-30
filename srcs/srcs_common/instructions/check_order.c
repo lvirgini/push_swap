@@ -6,11 +6,11 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 14:00:41 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 18:38:50 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/30 22:51:23 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_common.h"
 
 /*
 ** check if the list is sorted in ascending order

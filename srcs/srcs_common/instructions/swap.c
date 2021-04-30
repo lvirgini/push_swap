@@ -6,11 +6,11 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:22:03 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 17:53:48 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/30 22:45:44 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_common.h"
 
 /*
 ** swap two values of two int *

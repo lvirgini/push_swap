@@ -6,11 +6,11 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 23:50:04 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 17:29:58 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/30 22:43:39 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 static int		is_instruction(char *line)
 {

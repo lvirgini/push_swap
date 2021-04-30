@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 15:30:00 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/29 14:17:17 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/30 22:53:53 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ t_opti			generate_t_opti(int data, int a_index, int a_size,
 	return (ret);
 }
 
-static t_opti		get_the_best_next_opti(t_lst *l[2], t_stack *b, int l_size,
+static t_opti	get_the_best_next_opti(t_lst *l[2], t_stack *b, int l_size,
 			int index)
 {
 	t_opti	from_first;
@@ -70,7 +70,7 @@ static t_opti		get_the_best_next_opti(t_lst *l[2], t_stack *b, int l_size,
 	return (from_first);
 }
 
-t_opti		check_other_opti(t_opti op, t_stack *a, t_stack *b)
+t_opti			check_other_opti(t_opti op, t_stack *a, t_stack *b)
 {
 	t_opti	better;
 	t_opti	tmp;

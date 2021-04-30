@@ -6,11 +6,11 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 19:15:50 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/17 12:48:19 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/30 22:44:58 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_common.h"
 
 /*
 ** to_push become to_push->next

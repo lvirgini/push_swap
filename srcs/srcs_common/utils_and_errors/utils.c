@@ -6,11 +6,11 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 23:21:04 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 15:58:21 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/30 22:46:12 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_common.h"
 
 void		check_arg(int argc)
 {

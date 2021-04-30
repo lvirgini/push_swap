@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 16:30:55 by lvirgini          #+#    #+#              #
-#    Updated: 2021/04/28 21:37:20 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/04/30 22:55:00 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,7 @@ SRC_COMMON = init_s_stack.c 	\
 			reverse_rotate.c 	\
 			push.c 				\
 			swap.c 				\
-			check_order.c		\
-			print.c 				
+			check_order.c				
 
 SRC_PU	=	$(SRC_COMMON) main_push_swap.c	\
 			print_instruction.c \
@@ -50,11 +49,11 @@ SRC_PU	=	$(SRC_COMMON) main_push_swap.c	\
 			rotate_min_instruction.c \
 			push_in_order.c		\
 			t_opti.c			\
-			t_opti_insertion_sort.c \
+			t_opti_insertion_sort.c 
 			
 SRC_CH	= $(SRC_COMMON) main_checker.c		\
-			get_instruction.c	\
-			get_verbose_instruction.c \
+			get_instruction.c	
+
 
 OBJ_PU 	=	$(addprefix $(OBJ_DIR),$(SRC_PU:%.c=%.o))
 OBJ_CH 	=	$(addprefix $(OBJ_DIR),$(SRC_CH:%.c=%.o))
@@ -71,8 +70,8 @@ vpath %.h $(foreach dir, $(INC_DIR)/, $(dir):)
 
 CC 		=	gcc
 
-CFLAG 	= 	-Wall -Wextra -g -fsanitize=leak
-# -fsanitize=leak
+CFLAG 	= 	-Wall -Wextra -Werror
+
 IFLAG 	= 	$(foreach dir, $(INC_DIR), -I $(dir) )
 LFLAG 	=	$(foreach lib, $(LIB), -l $(lib) ) $(foreach dir, $(LIB_DIR), -L $(dir) )
 
@@ -88,12 +87,6 @@ $(OBJ_DIR)%.o: %.c $(HEADERS)
 			@mkdir -p $(OBJ_DIR)
 			@echo "\033[32mCompilation de ... $(foreach file, $< , $(notdir $<))\033[0m"
 			@$(CC) $(CFLAG) $(IFLAG) -o $@ -c $< 
-
-
-#$(NAME): 	$(OBJ)
-#			@$(CC) $(CFLAG) $(IFLAG) $(OBJ) -o $@ $(LFLAG)
-#			@echo "\n*     Compilation $(NAME)     *\t   \033[32;1m--> \033[4;5mComplete\033[0m"
-
 			
 $(NAME_CHECKER) : $(OBJ_CH)
 			$(CC) $(CFLAG) $(IFLAG) $(OBJ_CH) -o $@ $(LFLAG)

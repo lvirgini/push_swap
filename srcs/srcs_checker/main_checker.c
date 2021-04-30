@@ -6,22 +6,11 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:32:30 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 18:19:18 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/30 22:43:53 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-#include "push_swap.h"
-
-// A SUPPRIMER
-void	printer_get_instruction(t_stack *a, t_stack *b)
-{
-	if (get_verbose_instructions(a, b) == true)
-		ft_putstr("OK\n");
-	else
-		ft_putstr("KO\n");
-	exit(0);
-}
 
 /*
 ** CHECKER
@@ -55,8 +44,6 @@ int		main(int argc, char *argv[])
 	if (!a)
 		return (-1);
 	b = malloc_stack(NULL, NULL, 0);
-//	print_two_stacks(a, b);
-//	printer_get_instruction(a, b);
 	if (get_instructions(a, b) == true)
 		ft_putstr("OK\n");
 	else

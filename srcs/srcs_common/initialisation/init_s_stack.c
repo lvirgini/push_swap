@@ -6,11 +6,11 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 11:34:37 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 17:46:07 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/30 22:44:40 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_common.h"
 
 /*
 ** malloc and free for stack

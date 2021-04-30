@@ -6,11 +6,11 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 01:21:57 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/16 18:16:15 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/04/30 22:45:20 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap_common.h"
 
 /*
 ** last->prev become new last
