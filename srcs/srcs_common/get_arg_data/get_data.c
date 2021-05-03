@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 18:31:41 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 18:30:04 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/05/03 12:30:23 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ static int		is_duplicate_data(t_lst *lst)
 		while (j)
 		{
 			if (i->data == j->data)
+			{
 				return (true);
+			}
 			j = j->next;
 		}
 		i = i->next;
@@ -65,13 +67,13 @@ static t_lst	*get_all_values_to_lst(char **src, int size)
 
 	i = 1;
 	first = atoi_to_lst(src[i], NULL);
-	if (!first)
+	if (first == NULL)
 		return (NULL);
 	l = first;
 	while (++i < size)
 	{
 		l->next = atoi_to_lst(src[i], l);
-		if (!l->next)
+		if (l->next == NULL)
 		{
 			free_all_lst(first);
 			return (NULL);

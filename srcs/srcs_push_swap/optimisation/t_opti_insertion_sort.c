@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 21:34:06 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/30 22:53:42 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/05/03 11:47:13 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,5 @@ void			optimize_insertion_sort(t_stack *a, t_stack *b)
 	}
 	print_and_do_multi(a, b, op.b_type_rotate == ROTATE ?
 			RB : RRB, op.b_rotate);
-	print_and_do(a, b, PA);
+	print_and_do(a, b, PB);
 }

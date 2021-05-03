@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:32:30 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/30 22:43:53 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/05/03 13:39:04 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,14 @@
 **	Errors include for example: some arguments are not integers,
 **		some arguments are bigger than an integer, there are duplicates,
 **		an instruction don’t exist and/or is incorrectly formatted.
+**
+** for checking visual sorts : do
+**	t_lst *l = a->first;
+**	while (l) {
+**		ft_putnbr(l->data);
+**		ft_putchar(' ');
+**		l = l->next;
+**	}
 */
 
 int		main(int argc, char *argv[])

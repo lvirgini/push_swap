@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 16:28:25 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 19:10:37 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/05/03 13:39:24 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ void	push_first_a_in_order_on_b(t_stack *a, t_stack *b)
 		insert = get_index_for_push(a->first->data, b->first);
 		rotate_b_with_minimal_instruction(b, insert);
 	}
-	print_and_do(a, b, PA);
+	if (check_order(a->first) == false)
+		print_and_do(a, b, PB);
 }
 
 void	push_first_b_in_order_on_a(t_stack *a, t_stack *b)
@@ -48,7 +49,7 @@ void	push_first_b_in_order_on_a(t_stack *a, t_stack *b)
 		insert = get_index_for_push(b->first->data, a->first);
 		rotate_a_with_minimal_instruction(a, insert);
 	}
-	print_and_do(a, b, PB);
+	print_and_do(a, b, PA);
 }
 
 /*

@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 11:50:51 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 19:04:51 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/05/03 11:46:26 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 ** while A is not sorted :
-** if	 1 < 2 < last 	: in order : PA
+** if	 1 < 2 < last 	: in order : PB
 ** if last < 1 < 2 		: RRA
 ** if    2 < 1 < last	: SA
 ** if last < 2 < 1		: RA
@@ -26,7 +26,7 @@ static int	test_tri_for_a(int first, int second, int last)
 	if (first < second)
 	{
 		if (first < last)
-			return (PA);
+			return (PB);
 		else
 			return (RRA);
 	}
@@ -41,7 +41,7 @@ static int	test_tri_for_b(int first, int second, int last)
 	if (first > second)
 	{
 		if (first > last)
-			return (PB);
+			return (PA);
 		else
 			return (RRB);
 	}
@@ -53,9 +53,9 @@ static int	test_tri_for_b(int first, int second, int last)
 
 static void	print_and_do_test_tri(t_stack *a, t_stack *b, int ia, int ib)
 {
-	if (ia == PA)
+	if (ia == PB)
 	{
-		if (ib != PB && ib != -1)
+		if (ib != PA && ib != -1)
 			print_and_do(a, b, ib);
 		print_and_do(a, b, ia);
 	}
@@ -86,13 +86,13 @@ void		test_tri(t_stack *a, t_stack *b)
 				b->last->data);
 			print_and_do_test_tri(a, b, ia, ib);
 		}
-		if (b->size > 1)
-			ib = test_tri_for_b(b->first->data, b->first->next->data,
-			b->last->data);
-		else
-			ib = PB;
-		print_and_do(a, b, ib);
+		if (b->size > 0)
+		{
+			ib = b->size == 1 ? PA : test_tri_for_b(b->first->data,
+			b->first->next->data, b->last->data);
+			print_and_do(a, b, ib);
+		}
 	}
 	while (b->size > 0)
-		print_and_do(a, b, PB);
+		print_and_do(a, b, PA);
 }

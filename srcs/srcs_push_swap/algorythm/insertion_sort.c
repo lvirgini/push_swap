@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:33:40 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 21:34:45 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/05/03 11:45:38 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 void			insertion_sort(t_stack *a, t_stack *b)
 {
 	three_datas(a);
-	print_and_do(a, b, PA);
+	print_and_do(a, b, PB);
 	while (a->size > 3 && check_order(a->first) == false)
 		optimize_insertion_sort(a, b);
 	three_datas(a);
@@ -36,11 +36,11 @@ void			insertion_sort(t_stack *a, t_stack *b)
 	while (b->size > 0)
 	{
 		if (b->first->data > a->last->data)
-			print_and_do(a, b, PB);
+			print_and_do(a, b, PA);
 		else if (find_closest_min_data_lst(a->first, b->first->data) == -1)
 		{
 			rotate_a_with_minimal_instruction(a, find_min_data_lst(a->first));
-			print_and_do(a, b, PB);
+			print_and_do(a, b, PA);
 		}
 		else
 			print_and_do(a, b, RRA);
