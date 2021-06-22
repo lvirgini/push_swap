@@ -6,32 +6,22 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 23:50:04 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/06/22 16:52:55 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/22 17:06:46 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	ft_strcmp2(const char *s1, const char *s2)
-{
-		if (!*s1 || *s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		return (ft_strcmp2(++s1, ++s2));
-}
-
-
 static int	is_instruction(char *line)
 {
-	//static const char	*guidelines[] = {PRINT_SA, PRINT_SB, PRINT_SS, PRINT_PA,
-	//	PRINT_PB, PRINT_RA, PRINT_RB, PRINT_RR, PRINT_RRA, PRINT_RRB, PRINT_RRR};
 	static const char	*guidelines[] = {STR_SA, STR_SB, STR_SS, STR_PA,
 		STR_PB, STR_RA, STR_RB, STR_RR, STR_RRA, STR_RRB, STR_RRR};
-		size_t				i;
+	size_t				i;
 
 	i = 0;
 	while (i < 11)
 	{
-		if (ft_strcmp2(line, guidelines[i]) == 0)
+		if (ft_strcmp(line, guidelines[i]) == 0)
 			return (i);
 		i++;
 	}
@@ -59,10 +49,6 @@ static void	get_function_instructions(t_func *f)
 ** execute the instruction
 ** return to checker_order
 */
-
-       #include <sys/types.h>
-       #include <sys/stat.h>
-       #include <fcntl.h>
 
 int	get_instructions(t_stack *a, t_stack *b)
 {

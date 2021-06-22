@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 11:50:51 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/06/21 21:33:11 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/22 17:23:27 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,23 @@ static void	print_and_do_test_tri(t_stack *a, t_stack *b, int ia, int ib)
 		print_and_do(a, b, ia);
 	}
 	else if (ia == SA)
-		print_and_do(a, b, test_ss_for_b(b->first) ? SS : ia);
+		print_and_do(a, b, test_ss_for_b(b->first));
 	else if (ia == RA)
-		print_and_do(a, b, test_rr_for_b(b->first, b->last) ? RR : ia);
+		print_and_do(a, b, test_rr_for_b(b->first, b->last));
 	else if (ia == RRA)
-		print_and_do(a, b, test_rrr_for_b(b->first, b->last) ? RRR : ia);
+		print_and_do(a, b, test_rrr_for_b(b->first, b->last));
 	else
 		print_and_do(a, b, ia);
+}
+
+static void	push_rest_on_a(t_stack *a, t_stack *b, int ib)
+{
+	if (b->size == 1)
+		ib = PA;
+	else
+		ib = test_tri_for_b(b->first->data, b->first->next->data,
+				b->last->data);
+	print_and_do(a, b, ib);
 }
 
 void	test_tri(t_stack *a, t_stack *b)
@@ -87,11 +97,7 @@ void	test_tri(t_stack *a, t_stack *b)
 			print_and_do_test_tri(a, b, ia, ib);
 		}
 		if (b->size > 0)
-		{
-			ib = b->size == 1 ? PA : test_tri_for_b(b->first->data,
-			b->first->next->data, b->last->data);
-			print_and_do(a, b, ib);
-		}
+			push_rest_on_a(a, b, ib);
 	}
 	while (b->size > 0)
 		print_and_do(a, b, PA);

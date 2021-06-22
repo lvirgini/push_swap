@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 21:34:06 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/06/21 21:24:26 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/22 17:29:32 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,13 @@ static t_opti	optimize_push_to_pop(t_stack *st, t_stack *to_pop)
 	return (ret_optimize_push_to_pop(first, second, last));
 }
 
+static int	get_good_b_rotate(int type_rotate)
+{
+	if (type_rotate == ROTATE)
+		return (RB);
+	return (RRB);
+}
+
 void	optimize_insertion_sort(t_stack *a, t_stack *b)
 {
 	t_opti	op;
@@ -78,7 +85,6 @@ void	optimize_insertion_sort(t_stack *a, t_stack *b)
 		if (op.a_rotate > 0)
 			print_and_do_multi(a, b, RRA, op.a_rotate);
 	}
-	print_and_do_multi(a, b, op.b_type_rotate == ROTATE ?
-			RB : RRB, op.b_rotate);
+	print_and_do_multi(a, b, get_good_b_rotate(op.b_type_rotate), op.b_rotate);
 	print_and_do(a, b, PB);
 }
