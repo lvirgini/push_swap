@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 16:30:55 by lvirgini          #+#    #+#              #
-#    Updated: 2021/06/22 12:11:24 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/06/22 14:24:29 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,7 +105,7 @@ re-install :
 bonus :  all
 
 test : all
-		./test_push_swap.sh
+		./test_all.sh
 
 show	:
 			@echo "SRC_DIR : $(SRC_DIR)\n"

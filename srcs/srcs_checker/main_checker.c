@@ -6,11 +6,11 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:32:30 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/06/22 12:07:12 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/22 13:51:35 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/checker.h"
+#include "checker.h"
 
 /*
 ** CHECKER

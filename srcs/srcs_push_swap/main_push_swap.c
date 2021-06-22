@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:31:36 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/06/22 11:47:54 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/22 14:28:11 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 ** the stack A, the smallest number being at the top.
 ** sort instructions are separared by a ’\n’.
 */
-
-#include "stdio.h"
 
 int	main(int argc, char *argv[])
 {

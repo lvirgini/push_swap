@@ -4,10 +4,20 @@
 # avec le générateur de tharchen : genstack.pl
 # effectue $seq_max fois push swap pour chaque 5, 100 et 500 nombres
 # garde le pire cas ( le plus grand nombres d'opérations) et le compare aux notations
-# pour évalué sa notes. 
+# pour évalué sa notes.
+
+#* ------------------------------
+# CHANGER DE CHECKER : 			-
+#* ------------------------------
+#								-
+checker="./checker_linux"
+#checker=./checker
+#								-
+#* ------------------------------
 
 INT_MIN=-2147483648
 INT_MAX=2147483647
+
 # Nombre total de test pour chaque partie
 seq_max=50
 
@@ -18,12 +28,14 @@ max_100=0
 max_500=0
 result=0
 
-# test pour 5 nombres
+#* ------------------------------
+# test pour 5 nombres			-
+#* ------------------------------
 for i in `seq 1 $seq_max`;
 do
 	ARG=`./genstack.pl 5 $INT_MIN $INT_MAX`
 	let "result = `./push_swap $ARG | wc -l`"
-	ok=`./push_swap $ARG | ./checker $ARG`
+	ok=`./push_swap $ARG | $checker $ARG`
 	if [ $ok = "KO" ]; then
 		echo "$ok for $ARG"
 	fi
@@ -36,12 +48,14 @@ do
 	fi
 done
 
-# test pour 100 nombres
+#* ------------------------------
+# test pour 100 nombres			-
+#* ------------------------------
 for i in `seq 1 $seq_max`;
 do
 	ARG=`./genstack.pl 100 $INT_MIN $INT_MAX`
 	let "result = `./push_swap $ARG | wc -l`"
-	ok=`./push_swap $ARG | ./checker $ARG`
+	ok=`./push_swap $ARG | $checker $ARG`
 	if [ $ok = "KO" ]; then
 		echo "$ok for $ARG"
 	fi
@@ -51,12 +65,14 @@ do
 	fi
 done
 
-#test pour 500 nombres
+#* ------------------------------
+# test pour 500 nombres			-
+#* ------------------------------
 for i in `seq 1 $seq_max`;
 do
 	ARG=`./genstack.pl 500 $INT_MIN $INT_MAX`
 	let "result = `./push_swap $ARG | wc -l`"
-	ok=`./push_swap $ARG | ./checker $ARG`
+	ok=`./push_swap $ARG | $checker $ARG`
 	if [ $ok = "KO" ]; then
 		echo "$ok for $ARG"
 	fi
@@ -66,15 +82,20 @@ do
 	fi
 done
 
-# resultats attendus : 
+
+# resultats attendus :
+# 
 # pour 5 nombre moins de 12 opérations
+# ----------------------------------------------------- 
 if [ $max_5 -lt 12 ]; then 
 	echo -e "\e[92mpour 5 nombres   : $max_5/12	=> OK\e[0m"
 else 
 	echo -e " \e[31mpour 5 nombres : $max_5/12	=> KO\e[0m"
 fi
 
+
 # pour 100 nombres : les 5 palliers de notations
+# ----------------------------------------------------- 
 if [ $max_100 -lt 700 ]; then 
 	echo -e "\e[92mpour 100 nombres : $max_100/700	=> OK	5/5 Badassss \e[0m"
 elif [ $max_100 -lt 900 ]; then
@@ -90,7 +111,10 @@ else
 fi
 #echo -e "BADEST ARG = $BADARG_100"
 
+
+
 # pour 500 nombres : les 5 palliers de notations
+# ----------------------------------------------------- 
 if [ $max_500 -lt 5500 ]; then 
 	echo -e "\e[92mpour 500 nombres : $max_500/5500	=> OK	5/5 Badassss \e[0m"
 elif [ $max_500 -lt 7000 ]; then
