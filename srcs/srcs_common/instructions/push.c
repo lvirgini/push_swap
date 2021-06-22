@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 19:15:50 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/05/03 11:43:28 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:29:14 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static void	push(t_stack *to_push, t_stack *st)
 ** here shift pointers to the right.
 */
 
-void		do_pb(t_stack *a, t_stack *b)
+void	do_pb(t_stack *a, t_stack *b)
 {
 	if (a->size > 0)
 	{
@@ -61,7 +61,7 @@ void		do_pb(t_stack *a, t_stack *b)
 ** here shift pointers to the left
 */
 
-void		do_pa(t_stack *a, t_stack *b)
+void	do_pa(t_stack *a, t_stack *b)
 {
 	if (b->size > 0)
 	{

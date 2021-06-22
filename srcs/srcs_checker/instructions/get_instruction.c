@@ -6,13 +6,13 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 23:50:04 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/30 22:43:39 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:30:16 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static int		is_instruction(char *line)
+static int	is_instruction(char *line)
 {
 	static const char	*guidelines[] = {STR_SA, STR_SB, STR_SS, STR_PA,
 		STR_PB, STR_RA, STR_RB, STR_RR, STR_RRA, STR_RRB, STR_RRR};
@@ -28,7 +28,7 @@ static int		is_instruction(char *line)
 	return (-1);
 }
 
-static void		get_function_instructions(t_func *f)
+static void	get_function_instructions(t_func *f)
 {
 	f[SA] = &do_sa;
 	f[SB] = &do_sb;
@@ -50,7 +50,7 @@ static void		get_function_instructions(t_func *f)
 ** return to checker_order
 */
 
-int				get_instructions(t_stack *a, t_stack *b)
+int	get_instructions(t_stack *a, t_stack *b)
 {
 	char	*line;
 	int		instruction;

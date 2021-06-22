@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 18:31:41 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/05/03 12:30:23 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:29:04 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** check all values in lst to find duplicate
 */
 
-static int		is_duplicate_data(t_lst *lst)
+static int	is_duplicate_data(t_lst *lst)
 {
 	t_lst	*i;
 	t_lst	*j;
@@ -92,7 +92,7 @@ static t_lst	*get_all_values_to_lst(char **src, int size)
 **		return : generate stack a
 */
 
-t_stack			*generate_stack_a_content(char **srcs, int size)
+t_stack	*generate_stack_a_content(char **srcs, int size)
 {
 	t_stack		*a;
 	t_lst		*l;

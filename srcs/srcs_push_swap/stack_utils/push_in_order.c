@@ -6,15 +6,15 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 16:28:25 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/05/03 13:39:24 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:16:14 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		get_index_for_push(int data, t_lst *l)
+int	get_index_for_push(int data, t_lst *l)
 {
-	int index;
+	int		index;
 
 	index = find_closest_min_data_lst(l, data);
 	if (index == -1)
@@ -29,7 +29,7 @@ int		get_index_for_push(int data, t_lst *l)
 
 void	push_first_a_in_order_on_b(t_stack *a, t_stack *b)
 {
-	int insert;
+	int		insert;
 
 	if (b->size >= 1)
 	{
@@ -42,7 +42,7 @@ void	push_first_a_in_order_on_b(t_stack *a, t_stack *b)
 
 void	push_first_b_in_order_on_a(t_stack *a, t_stack *b)
 {
-	int insert;
+	int		insert;
 
 	if (a->size >= 1)
 	{

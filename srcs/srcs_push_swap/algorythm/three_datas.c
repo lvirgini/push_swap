@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/04 13:32:22 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/27 15:47:12 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:15:46 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	three_data_231(t_stack *a)
 	print_and_do(a, NULL, RRA);
 }
 
-void		three_datas(t_stack *a)
+void	three_datas(t_stack *a)
 {
 	int	first;
 	int	second;

@@ -6,13 +6,13 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 23:21:04 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/05/03 12:01:29 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:28:23 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_common.h"
 
-void		check_arg(int argc)
+void	check_arg(int argc)
 {
 	if (argc < 2)
 		exit(-1);

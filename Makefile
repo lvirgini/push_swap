@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 16:30:55 by lvirgini          #+#    #+#              #
-#    Updated: 2021/04/30 22:55:00 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/06/22 12:11:24 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,7 @@ vpath %.h $(foreach dir, $(INC_DIR)/, $(dir):)
 
 CC 		=	gcc
 
-CFLAG 	= 	-Wall -Wextra -Werror
+CFLAG 	= 	-Wall -Wextra -Werror -g
 
 IFLAG 	= 	$(foreach dir, $(INC_DIR), -I $(dir) )
 LFLAG 	=	$(foreach lib, $(LIB), -l $(lib) ) $(foreach dir, $(LIB_DIR), -L $(dir) )

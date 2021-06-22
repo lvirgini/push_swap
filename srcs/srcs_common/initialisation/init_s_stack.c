@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 11:34:37 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/30 22:44:40 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:27:54 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 ** malloc and free for stack
 */
 
-t_stack		*malloc_stack(t_lst *first, t_lst *last, int size)
+t_stack	*malloc_stack(t_lst *first, t_lst *last, int size)
 {
-	t_stack *res;
+	t_stack		*res;
 
 	res = (t_stack *)malloc(sizeof(t_stack));
 	if (res == NULL)
@@ -32,7 +32,7 @@ t_stack		*malloc_stack(t_lst *first, t_lst *last, int size)
 	return (res);
 }
 
-void		free_stack(t_stack *st)
+void	free_stack(t_stack *st)
 {
 	if (st)
 	{

@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:31:36 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/05/03 13:39:17 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/22 11:47:54 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 
 #include "stdio.h"
 
-int				main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_stack		*a;
 	t_stack		*b;

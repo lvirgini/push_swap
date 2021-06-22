@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 01:21:57 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/30 22:45:20 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:30:05 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 ** first become new second
 */
 
-static void		inverse_rotate_lst(t_lst **first, t_lst **last)
+static void	inverse_rotate_lst(t_lst **first, t_lst **last)
 {
 	(*last)->next = *first;
 	*last = (*last)->prev;
@@ -34,7 +34,7 @@ static void		inverse_rotate_lst(t_lst **first, t_lst **last)
 ** 	The last element becomes the first one.
 */
 
-void			do_rra(t_stack *a, t_stack *b)
+void	do_rra(t_stack *a, t_stack *b)
 {
 	(void)b;
 	if (a->size > 1)
@@ -47,7 +47,7 @@ void			do_rra(t_stack *a, t_stack *b)
 **	The last element becomes the first one.
 */
 
-void			do_rrb(t_stack *a, t_stack *b)
+void	do_rrb(t_stack *a, t_stack *b)
 {
 	(void)a;
 	if (b->size > 1)
@@ -58,7 +58,7 @@ void			do_rrb(t_stack *a, t_stack *b)
 ** rrr = rra && rrb
 */
 
-void			do_rrr(t_stack *a, t_stack *b)
+void	do_rrr(t_stack *a, t_stack *b)
 {
 	do_rra(a, b);
 	do_rrb(a, b);

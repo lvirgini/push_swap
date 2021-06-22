@@ -6,15 +6,15 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 14:50:28 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/05/03 12:06:28 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:28:56 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_common.h"
 
-void		print_error(size_t nb)
+void	print_error(size_t nb)
 {
-	static char *error[MAX_ERROR] = {
+	static char		*error[MAX_ERROR] = {
 		[ERR_MALLOC] = "Allocation problem : Malloc return NULL\n",
 		[ERR_ENTRY_NORM] = "Entry number is not well formated\n",
 		[ERR_ENTRY_EMPTY] = "Entry argument is empty\n",
@@ -25,7 +25,7 @@ void		print_error(size_t nb)
 	ft_putstr_fd(error[nb], 2);
 }
 
-int			error_push_swap(size_t error_nb)
+int	error_push_swap(size_t error_nb)
 {
 	ft_putstr_fd("Error :", 2);
 	if (error_nb < MAX_ERROR)
@@ -33,7 +33,7 @@ int			error_push_swap(size_t error_nb)
 	return (-1);
 }
 
-void		exit_error_push_swap(size_t error_nb)
+void	exit_error_push_swap(size_t error_nb)
 {
 	error_push_swap(error_nb);
 	exit(-1);

@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 13:21:41 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 19:21:01 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:27:01 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,10 @@ static void	print_one_instruction(int instruction)
 ** Print and do instruction
 */
 
-void		print_and_do(t_stack *a, t_stack *b, int instruction)
+void	print_and_do(t_stack *a, t_stack *b, int instruction)
 {
-	static t_func f[MAX_INSTRUCTION] = {&do_sa, &do_sb, &do_ss, &do_pa, &do_pb,
-				&do_ra, &do_rb, &do_rr, &do_rra, &do_rrb, &do_rrr};
+	static t_func	f[MAX_INSTRUCTION] = {&do_sa, &do_sb, &do_ss, &do_pa,
+			&do_pb,	&do_ra, &do_rb, &do_rr, &do_rra, &do_rrb, &do_rrr};
 
 	if (instruction < MAX_INSTRUCTION)
 	{
@@ -45,7 +45,7 @@ void		print_and_do(t_stack *a, t_stack *b, int instruction)
 **	print multi instructions
 */
 
-void		print_and_do_multi(t_stack *a, t_stack *b, int instruction,
+void	print_and_do_multi(t_stack *a, t_stack *b, int instruction,
 			int mult)
 {
 	while (mult-- > 0)

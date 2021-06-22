@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 12:41:15 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 17:28:46 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:25:33 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** find in (l) index of closest min data of (data)
 */
 
-int		find_closest_min_data_lst(t_lst *l, int data)
+int	find_closest_min_data_lst(t_lst *l, int data)
 {
 	int		i;
 	int		index_closest;

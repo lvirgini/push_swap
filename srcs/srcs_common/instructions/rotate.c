@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/03 01:22:04 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/30 22:45:35 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:29:48 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void	rotate_lst(t_lst **first, t_lst **last)
 **	The first element becomes the last one.
 */
 
-void		do_ra(t_stack *a, t_stack *b)
+void	do_ra(t_stack *a, t_stack *b)
 {
 	(void)b;
 	if (a->size > 1)
@@ -45,7 +45,7 @@ void		do_ra(t_stack *a, t_stack *b)
 **	The first element becomes the last one.
 */
 
-void		do_rb(t_stack *a, t_stack *b)
+void	do_rb(t_stack *a, t_stack *b)
 {
 	(void)a;
 	if (b->size > 1)
@@ -56,7 +56,7 @@ void		do_rb(t_stack *a, t_stack *b)
 ** rr = ra && rb
 */
 
-void		do_rr(t_stack *a, t_stack *b)
+void	do_rr(t_stack *a, t_stack *b)
 {
 	do_ra(a, b);
 	do_rb(a, b);

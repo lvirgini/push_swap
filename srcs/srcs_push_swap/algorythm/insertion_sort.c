@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/30 13:33:40 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/05/03 11:45:38 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:13:28 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 **		- when A is sorted, push ending B on order to A.
 */
 
-void			insertion_sort(t_stack *a, t_stack *b)
+void	insertion_sort(t_stack *a, t_stack *b)
 {
 	three_datas(a);
 	print_and_do(a, b, PB);

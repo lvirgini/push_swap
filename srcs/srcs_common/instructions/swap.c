@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:22:03 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/30 22:45:44 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:29:27 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** swap two values of two int *
 */
 
-void		swap_int(int *a, int *b)
+void	swap_int(int *a, int *b)
 {
 	int		tmp;
 
@@ -31,7 +31,7 @@ void		swap_int(int *a, int *b)
 **	Do nothing if there is only one or no elements).
 */
 
-void		do_sa(t_stack *a, t_stack *b)
+void	do_sa(t_stack *a, t_stack *b)
 {
 	(void)b;
 	if (a->size > 1)
@@ -44,7 +44,7 @@ void		do_sa(t_stack *a, t_stack *b)
 **	Do nothing if there is only one or no elements).
 */
 
-void		do_sb(t_stack *a, t_stack *b)
+void	do_sb(t_stack *a, t_stack *b)
 {
 	(void)a;
 	if (b->size > 1)
@@ -55,7 +55,7 @@ void		do_sb(t_stack *a, t_stack *b)
 ** instruction ss = sa + sb
 */
 
-void		do_ss(t_stack *a, t_stack *b)
+void	do_ss(t_stack *a, t_stack *b)
 {
 	do_sa(a, b);
 	do_sb(a, b);

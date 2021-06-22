@@ -6,11 +6,11 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:32:30 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/05/03 13:39:04 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/22 12:07:12 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "../../includes/checker.h"
 
 /*
 ** CHECKER
@@ -42,7 +42,7 @@
 **	}
 */
 
-int		main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
 	t_stack		*a;
 	t_stack		*b;

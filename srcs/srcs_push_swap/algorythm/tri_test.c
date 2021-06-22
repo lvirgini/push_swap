@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/08 11:50:51 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/05/03 11:46:26 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:33:11 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,21 +69,21 @@ static void	print_and_do_test_tri(t_stack *a, t_stack *b, int ia, int ib)
 		print_and_do(a, b, ia);
 }
 
-void		test_tri(t_stack *a, t_stack *b)
+void	test_tri(t_stack *a, t_stack *b)
 {
-	int	ia;
-	int ib;
+	int		ia;
+	int		ib;
 
 	while (final_checker_order(a, b) == false)
 	{
 		while (check_order(a->first) == false)
 		{
 			ia = test_tri_for_a(a->first->data, a->first->next->data,
-			a->last->data);
+					a->last->data);
 			ib = -1;
 			if (b->size > 1)
 				ib = test_tri_for_b(b->first->data, b->first->next->data,
-				b->last->data);
+						b->last->data);
 			print_and_do_test_tri(a, b, ia, ib);
 		}
 		if (b->size > 0)

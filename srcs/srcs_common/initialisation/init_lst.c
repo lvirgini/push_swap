@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 11:29:01 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/28 18:35:48 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:27:24 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static t_lst	create_lst(int data, t_lst *next, t_lst *prev)
 **	add = first
 */
 
-t_lst			*add_first_lst(int data, t_lst *next)
+t_lst	*add_first_lst(int data, t_lst *next)
 {
 	t_lst	*add;
 
@@ -50,7 +50,7 @@ t_lst			*add_first_lst(int data, t_lst *next)
 ** add = last
 */
 
-t_lst			*add_last_lst(int data, t_lst *last)
+t_lst	*add_last_lst(int data, t_lst *last)
 {
 	t_lst	*add;
 
@@ -70,9 +70,9 @@ t_lst			*add_last_lst(int data, t_lst *last)
 ** free all l and next l;
 */
 
-void			free_all_lst(t_lst *l)
+void	free_all_lst(t_lst *l)
 {
-	t_lst *tmp;
+	t_lst	*tmp;
 
 	while (l)
 	{

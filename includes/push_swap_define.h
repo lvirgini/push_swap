@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:29:28 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/30 22:39:53 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:43:12 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 # define PUSH_SWAP_DEFINE_H
 
 # define MAX_INSTRUCTION 11
-
-enum	e_bool
-{
-	false,
-	true
-};
 
 # define STR_SA		"sa"
 # define STR_SB		"sb"

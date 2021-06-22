@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:16:12 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/30 22:47:20 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:13:05 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ typedef struct s_opti	t_opti;
 
 struct		s_opti
 {
-	int b_type_rotate;
-	int a_type_rotate;
-	int a_index;
-	int b_index;
-	int b_rotate;
-	int	a_rotate;
-	int common_rotate;
-	int total;
+	int		b_type_rotate;
+	int		a_type_rotate;
+	int		a_index;
+	int		b_index;
+	int		b_rotate;
+	int		a_rotate;
+	int		common_rotate;
+	int		total;
 };
 
 /*
@@ -78,7 +78,7 @@ void		insertion_sort(t_stack *a, t_stack *b);
 
 void		optimize_insertion_sort(t_stack *a, t_stack *b);
 t_opti		generate_t_opti(int data, int a_index, int a_size,
-									t_stack *b);
+				t_stack *b);
 t_opti		check_other_opti(t_opti op, t_stack *a, t_stack *b);
 int			find_max_data_lst(t_lst *l);
 int			find_min_data_lst(t_lst *l);

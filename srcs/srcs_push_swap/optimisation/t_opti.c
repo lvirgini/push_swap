@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/27 15:30:00 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/30 22:53:53 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/21 21:23:32 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** return the min t_opti total instruction.
 */
 
-static void		get_total_rotate_opti(t_opti *op)
+static void	get_total_rotate_opti(t_opti *op)
 {
 	if (op->b_type_rotate == op->a_type_rotate)
 	{
@@ -37,7 +37,7 @@ static void		get_total_rotate_opti(t_opti *op)
 **		to push into lst(to pop)
 */
 
-t_opti			generate_t_opti(int data, int a_index, int a_size,
+t_opti	generate_t_opti(int data, int a_index, int a_size,
 									t_stack *b)
 {
 	t_opti		ret;
@@ -47,9 +47,9 @@ t_opti			generate_t_opti(int data, int a_index, int a_size,
 	ret.a_type_rotate = get_type_of_rotation(a_index, a_size / 2);
 	ret.b_type_rotate = get_type_of_rotation(ret.b_index, b->size / 2);
 	ret.b_rotate = get_min_instruction_for_rotate(ret.b_type_rotate,
-				ret.b_index, b->size);
+			ret.b_index, b->size);
 	ret.a_rotate = get_min_instruction_for_rotate(ret.a_type_rotate,
-				a_index, a_size);
+			a_index, a_size);
 	if (ret.a_type_rotate == INVERSE_ROTATE)
 		ret.a_rotate++;
 	ret.common_rotate = 0;
@@ -70,7 +70,7 @@ static t_opti	get_the_best_next_opti(t_lst *l[2], t_stack *b, int l_size,
 	return (from_first);
 }
 
-t_opti			check_other_opti(t_opti op, t_stack *a, t_stack *b)
+t_opti	check_other_opti(t_opti op, t_stack *a, t_stack *b)
 {
 	t_opti	better;
 	t_opti	tmp;
@@ -82,14 +82,14 @@ t_opti			check_other_opti(t_opti op, t_stack *a, t_stack *b)
 	from_first = a->first->next->next;
 	from_last = a->last->prev;
 	better = get_the_best_next_opti((t_lst *[2]){from_first, from_last}, b,
-		a->size, i);
+			a->size, i);
 	i = 3;
 	while (i < op.total && (i * 2) <= a->size)
 	{
 		from_first = from_first->next;
 		from_last = from_last->prev;
 		tmp = get_the_best_next_opti((t_lst *[2]){from_first, from_last}, b,
-			a->size, i);
+				a->size, i);
 		if (better.total > tmp.total)
 			better = tmp;
 		i++;
