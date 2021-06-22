@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 18:31:41 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/06/21 21:29:04 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/22 19:27:18 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static t_lst	*atoi_to_lst(char *src, t_lst *last)
 
 	if (ft_atoi_i(src, &data) == false)
 	{
-		error_push_swap(ERR_ENTRY_NORM);
+		error_push_swap();
 		return (NULL);
 	}
 	return (add_last_lst(data, last));
@@ -103,7 +103,7 @@ t_stack	*generate_stack_a_content(char **srcs, int size)
 	if (is_duplicate_data(l) == true)
 	{
 		free_all_lst(l);
-		error_push_swap(ERR_DUPLICATE);
+		error_push_swap();
 		return (NULL);
 	}
 	a = malloc_stack(l, get_last_lst(l), size - 1);

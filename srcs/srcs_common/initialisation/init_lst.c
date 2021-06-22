@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 11:29:01 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/06/21 21:27:24 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/22 19:26:34 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ t_lst	*add_first_lst(int data, t_lst *next)
 	add = (t_lst *)malloc(sizeof(t_lst));
 	if (add == NULL)
 	{
-		error_push_swap(ERR_MALLOC);
+		error_push_swap();
 		return (NULL);
 	}
 	*add = create_lst(data, next, NULL);
@@ -57,7 +57,7 @@ t_lst	*add_last_lst(int data, t_lst *last)
 	add = (t_lst *)malloc(sizeof(t_lst));
 	if (add == NULL)
 	{
-		error_push_swap(ERR_MALLOC);
+		error_push_swap();
 		return (NULL);
 	}
 	*add = create_lst(data, NULL, last);

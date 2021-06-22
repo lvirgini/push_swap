@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/02 23:50:04 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/06/22 17:06:46 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/22 19:27:31 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	get_instructions(t_stack *a, t_stack *b)
 		{
 			free_stack(a);
 			free_stack(b);
-			exit_error_push_swap(ERR_INSTRUCTION);
+			exit_error_push_swap();
 		}
 		f[instruction](a, b);
 	}

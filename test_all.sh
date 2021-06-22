@@ -10,8 +10,8 @@
 # CHANGER DE CHECKER : 			-
 #* ------------------------------
 #								-
-checker="./checker_linux"
-#checker=./checker
+#checker="./checker_linux"
+checker="./checker"
 #								-
 #* ------------------------------
 
