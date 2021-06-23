@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 18:29:28 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/06/21 21:43:12 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/23 09:45:36 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,7 @@
 
 enum	e_instruction
 {
-	NO_INSTRUCTION = -1,
-	SA,
+	SA = 0,
 	SB,
 	SS,
 	PA,

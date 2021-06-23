@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 16:31:36 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/06/22 14:28:11 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/06/23 10:00:38 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,11 @@ int	main(int argc, char *argv[])
 	if (!a)
 		return (-1);
 	b = malloc_stack(NULL, NULL, 0);
+	if (!b)
+	{
+		free_stack(a);
+		return (-1);
+	}
 	select_algo(a, b, a->size);
 	free_stack(a);
 	free_stack(b);
