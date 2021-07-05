@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2019/10/11 16:34:22 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/06/21 18:38:53 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+#include <stdlib.h>
 
-int	str_is_digits(char *str)
+/*
+** 	Recherche un caractère (c) dans une chaine de caratère (*s).
+** 	Retourne un pointeur sur la première occurence.
+*/
+
+char	*ft_strchr(const char *s, int c)
 {
-	size_t	i;
-
-	i = 0;
-	if (str[i] == '-')
-	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
-	}
-	while (str && str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
+	while ((char)c != *s && *s)
+		s++;
+	if ((char)c != *s)
+		return (NULL);
+	return ((char *)s);
 }

@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2019/10/12 16:25:15 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/06/21 18:23:29 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+#include <stdlib.h>
 
-int	str_is_digits(char *str)
+/*
+** Copie src dans dst au plus size octets. protège dst en la finissant par \0.
+*/
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
+	size_t	src_len;
 
+	if (!src)
+		return (0);
+	src_len = 0;
 	i = 0;
-	if (str[i] == '-')
+	while (src[src_len])
+		++src_len;
+	if (size-- > 0)
 	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
+		while (size-- && i < (src_len) && src[i])
+		{
+			dst[i] = src[i];
+			++i;
+		}
+		dst[i] = '\0';
 	}
-	while (str && str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
+	return (src_len);
 }

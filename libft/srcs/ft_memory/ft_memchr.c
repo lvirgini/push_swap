@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2019/10/18 14:06:30 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/06/21 18:12:33 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+#include <stddef.h>
 
-int	str_is_digits(char *str)
+/*
+** Recherche le caractère (c) sur (n) octets à partir de *s.
+*/
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
+	unsigned char	*str;
 
-	i = 0;
-	if (str[i] == '-')
+	str = (unsigned char *)s;
+	while (n-- > 0)
 	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
+		if (*str == (unsigned char)c)
+			return (str);
+		str++;
 	}
-	while (str && str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
+	return (NULL);
 }

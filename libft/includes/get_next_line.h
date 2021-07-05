@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/05/25 10:22:56 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/06/22 11:15:04 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	str_is_digits(char *str)
+/*
+** GET NEXT LINE . c
+*/
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
+
+# ifndef NB_FD
+#  define NB_FD 1
+# endif
+
+typedef struct s_gnl	t_gnl;
+
+struct			s_gnl
 {
-	size_t	i;
+	int		fd;
+	char	buf[BUFFER_SIZE + 1];
+};
 
-	i = 0;
-	if (str[i] == '-')
-	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
-	}
-	while (str && str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
-}
+int				get_next_line(int fd, char **line);
+
+#endif

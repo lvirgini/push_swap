@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/04/01 10:26:59 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/06/21 21:41:15 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+#include "libft.h"
 
-int	str_is_digits(char *str)
+/*
+** creer un char * avec pour seul element c puis utilise split_set
+*/
+/*
+char	**ft_split(const char *s, const char c)
 {
-	size_t	i;
+	char	set[2];
 
-	i = 0;
-	if (str[i] == '-')
-	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
-	}
-	while (str && str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
+	set[0] = c;
+	set[1] = '\0';
+	return (ft_split_set(s, (const char *)set));
 }
+*/

@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/04/20 12:09:23 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/06/21 18:40:41 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+/*
+** return the absolute values (int, long, long long)
+*/
 
-int	str_is_digits(char *str)
+int	ft_abs(int n)
 {
-	size_t	i;
+	if (n < 0)
+		return (-n);
+	return (n);
+}
 
-	i = 0;
-	if (str[i] == '-')
-	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
-	}
-	while (str && str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
+long	ft_labs(long n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}
+
+long long	ft_llabs(long long n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
 }

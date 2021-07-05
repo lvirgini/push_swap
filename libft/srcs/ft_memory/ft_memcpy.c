@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2019/10/18 13:34:53 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/06/21 18:12:52 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+#include <stddef.h>
 
-int	str_is_digits(char *str)
+/*
+** Copie n octets depuis la zone mémoire src vers la zone mémoire dest.
+** preferez memmove qui verifie l'emplacement de la memoire afin que
+** les deux zones puissent se chevaucher.
+*/
+
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	char	*d;
+	char	*s;
 
-	i = 0;
-	if (str[i] == '-')
-	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
-	}
-	while (str && str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
+	d = (char *)dest;
+	s = (char *)src;
+	if (dest || src)
+		while (n-- > 0)
+			*d++ = *s++;
+	return (dest);
 }

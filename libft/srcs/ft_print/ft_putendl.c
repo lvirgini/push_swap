@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2019/10/18 13:39:06 by lvirgini          #+#    #+#             */
+/*   Updated: 2020/03/07 13:18:20 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+#include "libft.h"
 
-int	str_is_digits(char *str)
+/*
+** Écrit La chaine de caractères sur la sortie standard
+** suivie d’un retour à la ligne.
+*/
+
+void	ft_putendl(char *s)
 {
-	size_t	i;
-
-	i = 0;
-	if (str[i] == '-')
+	if (s)
 	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
+		ft_putstr(s);
+		write(1, "\n", 1);
 	}
-	while (str && str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
 }

@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/01 18:31:41 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/06/22 19:27:18 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/07/05 15:32:25 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static int	is_duplicate_data(t_lst *lst)
 	t_lst	*i;
 	t_lst	*j;
 
+	if (!lst->next)
+		return (false);
 	i = lst;
 	while (i)
 	{
@@ -47,7 +49,7 @@ static t_lst	*atoi_to_lst(char *src, t_lst *last)
 {
 	int		data;
 
-	if (ft_atoi_i(src, &data) == false)
+	if (!str_is_digits(src) || ft_atoi_i(src, &data) == false)
 	{
 		error_push_swap();
 		return (NULL);

@@ -1,33 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2019/10/18 13:40:09 by lvirgini          #+#    #+#             */
+/*   Updated: 2020/04/28 14:33:51 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+#include "libft.h"
 
-int	str_is_digits(char *str)
+/*
+** Ecrit l'integer (n) sur l'entrée standard.
+*/
+
+void	ft_putnbr(int n)
 {
-	size_t	i;
+	long int	nb;
 
-	i = 0;
-	if (str[i] == '-')
+	nb = n;
+	if (nb < 0)
 	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
+		nb = -nb;
+		write(1, "-", 1);
 	}
-	while (str && str[i])
+	if (nb > 9)
 	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
-	return (true);
+	else
+	{
+		nb += '0';
+		write(1, &nb, 1);
+	}
 }

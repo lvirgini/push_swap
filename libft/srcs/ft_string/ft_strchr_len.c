@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_strchr_len.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2020/03/07 14:01:05 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/06/21 18:33:17 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+#include "libft.h"
 
-int	str_is_digits(char *str)
+/*
+** 	Recherche un caractère (c) dans une chaine de caratere (*s).
+** 	Renvoie l'index de la première occurence, sinon -1;
+*/
+
+int	ft_strchr_len(const char *s, int c)
 {
 	size_t	i;
 
 	i = 0;
-	if (str[i] == '-')
+	while (s && s[i])
 	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
+		if (s[i] == (char)c)
+			return (i);
+		++i;
 	}
-	while (str && str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
+	return (-1);
 }

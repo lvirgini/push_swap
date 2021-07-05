@@ -10,8 +10,8 @@
 # CHANGER DE CHECKER : 			-
 #* ------------------------------
 #								-
-#checker="./checker_linux"
-checker="./checker"
+checker="./checker_linux"
+#checker="./checker"
 #								-
 #* ------------------------------
 
@@ -97,7 +97,7 @@ fi
 # pour 100 nombres : les 5 palliers de notations
 # ----------------------------------------------------- 
 if [ $max_100 -lt 700 ]; then 
-	echo -e "\e[92mpour 100 nombres : $max_100/700	=> OK	5/5 Badassss \e[0m"
+	echo -e "\e[92mpour 100 nombres : $max_100/700	=> OK	5/5  \e[0m"
 elif [ $max_100 -lt 900 ]; then
 	echo -e "\e[32mpour 100 nombres : $max_100/900	=> OK	4/5	- de 700 pour 5\e[0m"
 elif [ $max_100 -lt 1100 ]; then
@@ -116,7 +116,7 @@ fi
 # pour 500 nombres : les 5 palliers de notations
 # ----------------------------------------------------- 
 if [ $max_500 -lt 5500 ]; then 
-	echo -e "\e[92mpour 500 nombres : $max_500/5500	=> OK	5/5 Badassss \e[0m"
+	echo -e "\e[92mpour 500 nombres : $max_500/5500	=> OK	5/5  \e[0m"
 elif [ $max_500 -lt 7000 ]; then
 	echo -e "\e[32mpour 500 nombres : $max_500/7000	=> OK	4/5	- de 5500 pour 5\e[0m"
 elif [ $max_500 -lt 8500 ]; then

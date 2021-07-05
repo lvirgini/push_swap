@@ -47,11 +47,17 @@ int	main(int argc, char *argv[])
 	t_stack		*a;
 	t_stack		*b;
 
-	check_arg(argc);
+	if (argc < 2)
+		return (0);
 	a = generate_stack_a_content(argv, argc);
 	if (!a)
 		return (-1);
 	b = malloc_stack(NULL, NULL, 0);
+	if (!b)
+	{
+		free_stack(a);
+		return (-1);
+	}	
 	if (get_instructions(a, b) == true)
 		ft_putstr("OK\n");
 	else

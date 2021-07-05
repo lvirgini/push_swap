@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2019/10/18 13:35:53 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/06/21 18:13:00 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+#include <stddef.h>
 
-int	str_is_digits(char *str)
+/*
+** copie n octets depuis la zone mémoire src vers la zone mémoire dest.
+** Les deux zones peuvent se chevaucher.
+*/
+
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t	i;
+	char	*d;
+	char	*s;
 
-	i = 0;
-	if (str[i] == '-')
+	d = (char *)dest;
+	s = (char *)src;
+	if (dest < src)
+		while (n-- > 0)
+			*d++ = *s++;
+	else if (dest > src)
 	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
+		d += n;
+		s += n;
+		while (n-- > 0)
+			*--d = *--s;
 	}
-	while (str && str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
+	return (dest);
 }

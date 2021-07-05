@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2019/10/18 14:16:34 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/06/21 18:15:41 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+#include <unistd.h>
 
-int	str_is_digits(char *str)
+/*
+** Ecrit la chaine de caractère (*s)  sur le file descriptor (fd).
+*/
+
+void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	i;
 
-	i = 0;
-	if (str[i] == '-')
+	if (s && fd)
 	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
+		i = 0;
+		while (s[i])
+			++i;
+		write(fd, s, i);
 	}
-	while (str && str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
 }

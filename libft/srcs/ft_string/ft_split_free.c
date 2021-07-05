@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_split_free.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2021/03/30 20:37:57 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/04/01 10:15:29 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+#include "libft.h"
 
-int	str_is_digits(char *str)
+void	ft_free_split_str(char **str)
 {
-	size_t	i;
+	size_t		i;
 
 	i = 0;
-	if (str[i] == '-')
+	if (str)
 	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
+		while (str[i])
+			free(str[i++]);
+		free(str);
 	}
-	while (str && str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
 }

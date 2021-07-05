@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   ft_strchr_set.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/05 15:27:35 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/07/05 15:42:09 by lvirgini         ###   ########.fr       */
+/*   Created: 2020/01/13 15:29:07 by lvirgini          #+#    #+#             */
+/*   Updated: 2021/06/21 18:39:51 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_common.h"
+#include "libft.h"
 
-int	str_is_digits(char *str)
+/*
+** Recherche si *s contient un des caractères de la chaine *set.
+** retourne un pointeur sur la premiere occurence, ou NULL si non trouvé.
+*/
+
+char	*ft_strchr_set(const char *s, const char *set)
 {
-	size_t	i;
-
-	i = 0;
-	if (str[i] == '-')
+	if (!set || !set[0])
+		return ((char *)s);
+	while (*s)
 	{
-		i++;
-		if (!ft_isdigit(str[i]))
-			return (false);
+		if (ft_strchr(set, *s))
+			return ((char *)s);
 	}
-	while (str && str[i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (false);
-		i++;
-	}
-	return (true);
+	return (NULL);
 }

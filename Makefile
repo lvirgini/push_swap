@@ -6,7 +6,7 @@
 #    By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/29 16:30:55 by lvirgini          #+#    #+#              #
-#    Updated: 2021/06/22 17:11:09 by lvirgini         ###   ########.fr        #
+#    Updated: 2021/07/05 15:30:44 by lvirgini         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@
 NAME_PUSH_SWAP 	=	push_swap
 NAME_CHECKER 	=	checker
 
-LIB_DIR =	lib/libft/
+LIB_DIR =	libft/
 SRC_DIR =	$(shell find srcs -type d)
-INC_DIR = 	$(shell find includes -type d) lib/libft/includes
+INC_DIR = 	$(shell find includes -type d) libft/includes
 OBJ_DIR =	obj/
 
 LIB		=	ft
@@ -27,8 +27,8 @@ LIB		=	ft
 SRC_COMMON = init_s_stack.c 	\
 			init_lst.c 			\
 			lst_utils.c			\
-			error.c 			\
 			utils.c				\
+			error.c 			\
 			get_data.c			\
 			rotate.c 			\
 			reverse_rotate.c 	\
@@ -70,7 +70,7 @@ vpath %.h $(foreach dir, $(INC_DIR)/, $(dir):)
 
 CC 		=	gcc
 
-CFLAG 	= 	-Wall -Wextra -Werror -g
+CFLAG 	= 	-Wall -Wextra -Werror -g -fsanitize=leak -fsanitize=address 
 
 IFLAG 	= 	$(foreach dir, $(INC_DIR), -I $(dir) )
 LFLAG 	=	$(foreach lib, $(LIB), -l $(lib) ) $(foreach dir, $(LIB_DIR), -L $(dir) )

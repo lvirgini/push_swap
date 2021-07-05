@@ -6,7 +6,7 @@
 /*   By: lvirgini <lvirgini@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/28 18:24:04 by lvirgini          #+#    #+#             */
-/*   Updated: 2021/04/30 22:52:02 by lvirgini         ###   ########.fr       */
+/*   Updated: 2021/07/05 15:31:20 by lvirgini         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef void	(*t_func)(t_stack *, t_stack *);
 */
 
 int			is_doublons(t_lst *lst);
-void		check_arg(int argc);
+int			str_is_digits(char *str);
 
 /*
 ** do instructions

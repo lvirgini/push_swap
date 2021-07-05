@@ -26,7 +26,8 @@ int	main(int argc, char *argv[])
 	t_stack		*a;
 	t_stack		*b;
 
-	check_arg(argc);
+	if (argc < 2)
+		return (0);
 	a = generate_stack_a_content(argv, argc);
 	if (!a)
 		return (-1);
