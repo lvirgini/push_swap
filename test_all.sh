@@ -10,8 +10,8 @@
 # CHANGER DE CHECKER : 			-
 #* ------------------------------
 #								-
-checker="./checker_linux"
-#checker="./checker"
+#checker="./checker_linux"
+checker="./checker"
 #								-
 #* ------------------------------
 
@@ -19,7 +19,7 @@ INT_MIN=-2147483648
 INT_MAX=2147483647
 
 # Nombre total de test pour chaque partie
-seq_max=50
+seq_max=20
 
 # autres variables 
 max_5=0
